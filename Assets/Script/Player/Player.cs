@@ -39,7 +39,6 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && _isGrounded)
         {
             rb.velocity = new Vector2(rb.velocity.x, jump);
-            Debug.Log("跳跃");
         }
 
         Flip();
