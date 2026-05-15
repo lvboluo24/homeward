@@ -12,6 +12,7 @@ TagManager:
   - checkpoint
   - CamCollider
   - Ground
+  - Ladder
   layers:
   - Default
   - TransparentFX
