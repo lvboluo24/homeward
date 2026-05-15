@@ -1121,7 +1121,7 @@ GameObject:
   - component: {fileID: 244222601}
   m_Layer: 0
   m_Name: Ladder
-  m_TagString: Untagged
+  m_TagString: Ladder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18819,6 +18819,10 @@ PrefabInstance:
     - target: {fileID: 1660454452807680991, guid: 77ba3efc342d78241b33e1a29418e33a, type: 3}
       propertyPath: level
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1660454452807680991, guid: 77ba3efc342d78241b33e1a29418e33a, type: 3}
+      propertyPath: gear.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7083329177596451227, guid: 77ba3efc342d78241b33e1a29418e33a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -81857,6 +81861,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SmallGear (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 3533830621728107364, guid: a2c9edb078fc23a41a8555fa1aec0dcc, type: 3}
+      propertyPath: m_TagString
+      value: SmallGear
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -83677,11 +83685,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1024248869806807261, guid: b99c1e5b40adffc46a3c39ca8c371629, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.55
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1175636002098745183, guid: b99c1e5b40adffc46a3c39ca8c371629, type: 3}
       propertyPath: speed
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1629265447985579555, guid: b99c1e5b40adffc46a3c39ca8c371629, type: 3}
       propertyPath: m_LocalPosition.x
@@ -84906,11 +84914,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 718799144901677972, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 41.43
+      value: 28.95
       objectReference: {fileID: 0}
     - target: {fileID: 718799144901677972, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.32
+      value: 8.09
       objectReference: {fileID: 0}
     - target: {fileID: 718799144901677972, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
       propertyPath: m_LocalPosition.z

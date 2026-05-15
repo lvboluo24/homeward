@@ -39,11 +39,12 @@ public class Player : MonoBehaviour
     [Tooltip("是否跳跃")]
     public bool _isJump;
 
-
+    public PlayerState currentState;
 
 
     private Rigidbody2D rb;
-    public PlayerState currentState;
+private Game game;
+
 
     void Start()
     {
@@ -52,6 +53,7 @@ public class Player : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        game = GameObject.Find("GameManager").GetComponent<Game>();
         //获取玩家缩放比例
         scaleScale = transform.localScale.x;
     }
@@ -125,7 +127,7 @@ public class Player : MonoBehaviour
     }
 
 
-    //如果玩家接触到tag为Ladder的碰撞体，切换状态为Climb,持续检测
+    //如果玩家接触到tag为Ladder的碰撞体
     private void OnTriggerStay2D(Collider2D other)
     {
         if (other.CompareTag("Ladder"))
@@ -134,13 +136,25 @@ public class Player : MonoBehaviour
             Debug.Log("在梯子上");
         }
     }
-    //如果玩家离开tag为Ladder的碰撞体，切换状态为Run
+    //如果玩家离开tag为Ladder的碰撞体
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Ladder"))
         {
             _isLadder = false;
             Debug.Log("不在梯子上");
+        }
+    }
+    //如果玩家碰撞到tag为SmallGear的碰撞体
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.collider.CompareTag("SmallGear"))
+        {
+  //消失
+            other.gameObject.SetActive(false);
+            //增加小齿轮数量
+            game.gear[0] += 1;
+
         }
     }
 

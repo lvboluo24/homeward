@@ -12,6 +12,9 @@ public class Game : MonoBehaviour
 
     [Tooltip("和平（0）/战争（1）世界")]
     public int worldType;
+
+    [Tooltip("当前拥有的齿轮数量，0，小齿轮，1，手雷齿轮，2，地雷齿轮，3，大齿轮")]
+    public List<int> gear = new List<int>() {0,0,0,0};
     private Player player;
     private MainCamera mainCamera;
     private Grid grid;
@@ -20,6 +23,8 @@ public class Game : MonoBehaviour
         player = GameObject.FindWithTag("Player").GetComponent<Player>();
         mainCamera = GameObject.Find("Main Camera").GetComponent<MainCamera>();
         grid = GameObject.Find("GridManager").GetComponent<Grid>();
+
+
     }
     void Start()
     {

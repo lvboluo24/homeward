@@ -13,6 +13,7 @@ TagManager:
   - CamCollider
   - Ground
   - Ladder
+  - SmallGear
   layers:
   - Default
   - TransparentFX
