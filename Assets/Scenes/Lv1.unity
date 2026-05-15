@@ -18672,7 +18672,7 @@ PrefabInstance:
       objectReference: {fileID: -1048564723410502792, guid: fbfb9afc59362b547ab4b862bdbf238b, type: 3}
     - target: {fileID: 2828207252847712499, guid: 964b66ec36a5f6f43af83ddc2a56b6c3, type: 3}
       propertyPath: m_SortingLayer
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2828207252847712499, guid: 964b66ec36a5f6f43af83ddc2a56b6c3, type: 3}
       propertyPath: m_SortingOrder
@@ -19241,7 +19241,7 @@ Transform:
   m_GameObject: {fileID: 1088059317}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.83, y: -4.32, z: 0}
+  m_LocalPosition: {x: -6.83, y: -4, z: 0}
   m_LocalScale: {x: 1.1779044, y: 0.88019234, z: 1.2944005}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -20495,7 +20495,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2871923267750217979, guid: 964b66ec36a5f6f43af83ddc2a56b6c3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.52
+      value: -3.361
       objectReference: {fileID: 0}
     - target: {fileID: 6238531838071804958, guid: 964b66ec36a5f6f43af83ddc2a56b6c3, type: 3}
       propertyPath: m_IsActive
@@ -20519,7 +20519,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6522282478725883559, guid: 964b66ec36a5f6f43af83ddc2a56b6c3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.64
+      value: -3.524
       objectReference: {fileID: 0}
     - target: {fileID: 7076401142034430302, guid: 964b66ec36a5f6f43af83ddc2a56b6c3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -50679,7 +50679,7 @@ Transform:
   m_GameObject: {fileID: 1357292186}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.84, y: -4.18, z: 0}
+  m_LocalPosition: {x: -6.84, y: -3.835, z: 0}
   m_LocalScale: {x: 1.1945931, y: 1.0531533, z: 1.1945931}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -50847,7 +50847,7 @@ PrefabInstance:
       objectReference: {fileID: 2802052644781066805, guid: b9673a03992e9854da5319c4b90ef19f, type: 3}
     - target: {fileID: 7529853373894385807, guid: 964b66ec36a5f6f43af83ddc2a56b6c3, type: 3}
       propertyPath: m_SortingLayer
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7529853373894385807, guid: 964b66ec36a5f6f43af83ddc2a56b6c3, type: 3}
       propertyPath: m_SortingOrder
@@ -81652,7 +81652,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7529853373894385807, guid: 964b66ec36a5f6f43af83ddc2a56b6c3, type: 3}
       propertyPath: m_SortingLayer
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7529853373894385807, guid: 964b66ec36a5f6f43af83ddc2a56b6c3, type: 3}
       propertyPath: m_SortingOrder
@@ -82228,7 +82228,7 @@ Sprite:
         format: 0
         dimension: 0
       m_DataSize: 80
-      _typelessdata: 000000bf0000003f000000000000003f0000003f00000000000000bf000000bf000000000000003f000000bf000000000000000000000000000000000000000000000000000000000000000000000000
+      _typelessdata: 000000bf0000003f000000000000003f0000003f00000000000000bf000000bf000000000000003f000000bf00000000000000000000803f0000803f0000803f00000000000000000000803f00000000
     m_Bindpose: []
     textureRect:
       serializedVersion: 2
@@ -84355,7 +84355,7 @@ Sprite:
         format: 0
         dimension: 0
       m_DataSize: 80
-      _typelessdata: 000000bf0000003f000000000000003f0000003f00000000000000bf000000bf000000000000003f000000bf000000000000000000000000000000000000000000000000000000000000000000000000
+      _typelessdata: 000000bf0000003f000000000000003f0000003f00000000000000bf000000bf000000000000003f000000bf00000000000000000000803f0000803f0000803f00000000000000000000803f00000000
     m_Bindpose: []
     textureRect:
       serializedVersion: 2

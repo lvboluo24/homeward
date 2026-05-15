@@ -5,34 +5,36 @@ using UnityEngine.Tilemaps;
 
 public class Grid : MonoBehaviour
 {
-    [Tooltip("和平世界显示，战争世界隐藏节点")]
-    public List<GameObject> PeaceNodes=new List<GameObject>();
-    [Tooltip("战争世界显示，和平世界隐藏节点")]
-    public List<GameObject> WarNodes=new List<GameObject>();
-    
+    [Tooltip("和平世界显示瓦片，战争世界隐藏瓦片")]
+    public List<GameObject> PeaceNodes = new List<GameObject>();
+    [Tooltip("战争世界显示瓦片，和平世界隐藏瓦片")]
+    public List<GameObject> WarNodes = new List<GameObject>();
+
+
+
 
     private Game game;
-        void Awake()
+    void Awake()
     {
 
         game = GameObject.Find("GameManager").GetComponent<Game>();
     }
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
-    //检测世界类型
+    //检测瓦片世界类型
     public void CheckWorldType()
     {
         if (game.worldType == 0)
         {
-            for(int i=0;i<PeaceNodes.Count;i++)
+            for (int i = 0; i < PeaceNodes.Count; i++)
             {
                 //获取TilemapRenderer组件，设置显示为true
                 TilemapRenderer tilemapRenderer = PeaceNodes[i].GetComponent<TilemapRenderer>();
@@ -41,7 +43,7 @@ public class Grid : MonoBehaviour
                 TilemapCollider2D tilemapCollider2D = PeaceNodes[i].GetComponent<TilemapCollider2D>();
                 tilemapCollider2D.enabled = true;
             }
-            for(int i=0;i<WarNodes.Count;i++)
+            for (int i = 0; i < WarNodes.Count; i++)
             {
                 //获取TilemapRenderer组件，设置显示为false
                 TilemapRenderer tilemapRenderer = WarNodes[i].GetComponent<TilemapRenderer>();
@@ -53,7 +55,7 @@ public class Grid : MonoBehaviour
         }
         else if (game.worldType == 1)
         {
-            for(int i=0;i<PeaceNodes.Count;i++)
+            for (int i = 0; i < PeaceNodes.Count; i++)
             {
                 //获取TilemapRenderer组件，设置显示为false
                 TilemapRenderer tilemapRenderer = PeaceNodes[i].GetComponent<TilemapRenderer>();
@@ -62,7 +64,7 @@ public class Grid : MonoBehaviour
                 TilemapCollider2D tilemapCollider2D = PeaceNodes[i].GetComponent<TilemapCollider2D>();
                 tilemapCollider2D.enabled = false;
             }
-            for(int i=0;i<WarNodes.Count;i++)
+            for (int i = 0; i < WarNodes.Count; i++)
             {
                 //获取TilemapRenderer组件，设置显示为true
                 TilemapRenderer tilemapRenderer = WarNodes[i].GetComponent<TilemapRenderer>();
@@ -73,4 +75,6 @@ public class Grid : MonoBehaviour
             }
         }
     }
+
+
 }
