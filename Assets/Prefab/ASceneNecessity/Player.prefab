@@ -51,8 +51,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 6
   jump: 8
+  climbSpeed: 0
   rayDownLength: 0.5
+  horizontalInput: 0
+  verticalInput: 0
+  _isGrounded: 0
   rayOffset: {x: 0, y: 0}
+  _isLadder: 0
+  _isJump: 0
+  currentState: 0
 --- !u!212 &6986709608083357851
 SpriteRenderer:
   m_ObjectHideFlags: 0

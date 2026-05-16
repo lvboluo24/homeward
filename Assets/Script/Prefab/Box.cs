@@ -21,10 +21,12 @@ public class Box : MonoBehaviour
     public int goal;//1，前往初始点,1,前往目标点，
     private List<Vector3> PathNodes = new List<Vector3>();//记录箱子路径点位置
     private Rigidbody2D rb;
+        private Game game;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        game = GameObject.Find("GameManager").GetComponent<Game>();
         //记录路径点位置
         for (int i = 0; i < Nodes.Count; i++)
         {
