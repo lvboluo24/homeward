@@ -719,7 +719,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3793726361528553357, guid: 517dde30e1efa7b409585b0d20d07e96, type: 3}
       propertyPath: m_Name
-      value: checkpoint (4)
+      value: Revive
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2119,7 +2119,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3793726361528553357, guid: 517dde30e1efa7b409585b0d20d07e96, type: 3}
       propertyPath: m_Name
-      value: checkpoint (3)
+      value: Revive3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18844,7 +18844,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3793726361528553357, guid: 517dde30e1efa7b409585b0d20d07e96, type: 3}
       propertyPath: m_Name
-      value: checkpoint (2)
+      value: Revive2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19121,7 +19121,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3793726361528553357, guid: 517dde30e1efa7b409585b0d20d07e96, type: 3}
       propertyPath: m_Name
-      value: checkpoint
+      value: Revive
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20565,7 +20565,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3793726361528553357, guid: 517dde30e1efa7b409585b0d20d07e96, type: 3}
       propertyPath: m_Name
-      value: checkpoint (1)
+      value: Revive1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -84810,7 +84810,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2125716989}
   m_Layer: 0
-  m_Name: checkpoint
+  m_Name: ReviveNode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -84846,11 +84846,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 718799144901677972, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 33.95
+      value: 29.37
       objectReference: {fileID: 0}
     - target: {fileID: 718799144901677972, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.57
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 718799144901677972, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
       propertyPath: m_LocalPosition.z

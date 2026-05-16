@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BackgroundAlone : MonoBehaviour
+public class Background : MonoBehaviour
 {
     public GameObject peaceBackground;
     public GameObject warBackground;

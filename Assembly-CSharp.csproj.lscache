@@ -52,7 +52,6 @@ TemporaryDependencyNodeTargetIdentifier=netstandard2.1
 
 [sourceFiles]
 Assets/Script/Manage/
- BackgroundAlone.cs
  Game.cs
  Grid.cs
 Assets/Script/
@@ -61,6 +60,10 @@ Assets/Script/
   Box.cs
   Door.cs
   GearButton.cs
+  Spike.cs
+ Single/
+  Background.cs
+  Revive.cs
  UI/Camera.cs
 Temp/obj/Debug/Assembly-CSharp/.NETStandard,Version=v2.1.AssemblyAttributes.cs
 

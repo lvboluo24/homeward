@@ -43,7 +43,7 @@ public class Player : MonoBehaviour
 
 
     private Rigidbody2D rb;
-private Game game;
+    private Game game;
 
 
     void Start()
@@ -127,7 +127,7 @@ private Game game;
     }
 
 
-    //如果玩家接触到tag为Ladder的碰撞体
+
     private void OnTriggerStay2D(Collider2D other)
     {
         if (other.CompareTag("Ladder"))
@@ -136,7 +136,7 @@ private Game game;
             Debug.Log("在梯子上");
         }
     }
-    //如果玩家离开tag为Ladder的碰撞体
+
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Ladder"))
@@ -145,16 +145,41 @@ private Game game;
             Debug.Log("不在梯子上");
         }
     }
-    //如果玩家碰撞到tag为SmallGear的碰撞体
+    
     private void OnCollisionEnter2D(Collision2D other)
     {
+        //小齿轮
         if (other.collider.CompareTag("SmallGear"))
         {
-  //消失
             other.gameObject.SetActive(false);
             //增加小齿轮数量
             game.gear[0] += 1;
-
+        }
+        //尖刺
+        if (other.collider.CompareTag("Spike"))
+        {
+            //死亡
+            StartCoroutine(Death());
+        }
+    }
+    //死亡协程
+    private IEnumerator Death()
+    {
+        // 玩家死亡逻辑
+        yield return new WaitForSeconds(0.5f);
+//找到A节点
+        GameObject ReviveNode = GameObject.Find("ReviveNode");
+        //遍历A节点下的脚本Revive
+        foreach (Transform child in ReviveNode.transform)
+        {
+            //获取脚本Revive
+            Revive revive = child.GetComponent<Revive>();
+            //判断是否是当前玩家的复活点
+            if (revive.x == game.x && revive.y == game.y)
+            {
+                //复活
+                transform.position = child.position;
+            }
         }
     }
 
