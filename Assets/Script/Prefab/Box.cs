@@ -17,20 +17,23 @@ public class Box : MonoBehaviour
     [Tooltip("箱子移动类型,0,自动往返，1，根据世界移动，")]
     public int type;
 
-    [Tooltip("箱子初始目标,0,前往初始点,1,前往目标点")]
+    [Tooltip("箱子世界类型,0,和平前往终点，1，战争前往终点")]
+    public int worldType;
+
+    [Tooltip("箱子目标,0,前往初始点,1,前往目标点")]
     public int goal;
 
-[Tooltip("0，两世界显示，1，和平显示，战争隐藏，2，和平隐藏，战争显示")]
-public int display;
+    [Tooltip("0，两世界显示，1，和平显示，战争隐藏，2，和平隐藏，战争显示")]
+    public int display;
     private List<Vector3> PathNodes = new List<Vector3>();//记录箱子路径点位置
-    
+
     private Game game;
     public Collider2D coll;
     public SpriteRenderer sr;
 
     void Awake()
     {
-        
+
         game = GameObject.Find("GameManager").GetComponent<Game>();
         //记录路径点位置
         for (int i = 0; i < Nodes.Count; i++)
@@ -47,16 +50,17 @@ public int display;
 
     void Update()
     {
-        if (type == 0)
+
+        //移动逻辑
+        transform.position = Vector3.MoveTowards(
+        transform.position,
+        PathNodes[index],
+        speed * Time.deltaTime);
+        //到达目标点逻辑
+        if (Vector3.Distance(transform.position, PathNodes[index]) < 0.1f)
         {
-            //自动往返
-            transform.position = Vector3.MoveTowards(
-            transform.position,
-            PathNodes[index],
-            speed * Time.deltaTime
-        );
-            //如果到达目标点
-            if (Vector3.Distance(transform.position, PathNodes[index]) < 0.1f)
+            //0，自动往返
+            if (type == 0)
             {
                 if (goal == 0)
                 {
@@ -82,14 +86,60 @@ public int display;
                         index++;
                     }
                 }
+            }
+            //1，根据世界移动
+            else if (type == 1)
+            {
+                //如果箱子世界类型为和平前往终点
+                if (worldType == 0)
+                {
+                    //如果为和平世界
+                    if (game.worldType == 0)
+                    {
+                        //如果未到达终点
+                        if (index < PathNodes.Count - 1)
+                        {
+                           index++;
+                        }
+                    }
+                    //如果为战争世界
+                    else if (game.worldType == 1)
+                    {
+                        //如果未到达初始点
+                        if (index > 0)
+                        {
+                            index--;
+                        }
+                    }
+
+                }
+                //如果为战争前往终点
+                else if (worldType == 1)
+                {
+                    //如果为和平世界
+                    if (game.worldType == 0)
+                    {
+                        //如果未到达初始点
+                        if (index > 0)
+                        {
+                            index--;
+                        }
+                    }
+                    //如果为战争世界
+                    else if (game.worldType == 1)
+                    {
+                        //如果未到达终点
+                        if (index < PathNodes.Count - 1)
+                        {
+                           index++;
+                        }
+                    }
+                }
 
             }
+
         }
-        else if (type == 1)
-        {
-            //根据世界移动
-        }
-UpdateDisplay();
+        UpdateDisplay();
     }
     //显示逻辑
     private void UpdateDisplay()
