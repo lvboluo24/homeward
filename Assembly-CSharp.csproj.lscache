@@ -61,6 +61,7 @@ Assets/Script/
   Door.cs
   GearButton.cs
   Spike.cs
+  TouchButton.cs
  Single/
   Background.cs
   Revive.cs

@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
+    [Tooltip("门需要的激活数量")]
+public int demandnumber;
+    [Tooltip("门当前激活数量")]
+public int number;
 
+    [Tooltip("门是否打开")]
+public bool _isOpen;
     private Collider2D coll;
     private SpriteRenderer sr;
     void Awake()
@@ -12,6 +18,7 @@ public class Door : MonoBehaviour
         
         sr = GetComponent<SpriteRenderer>();
         coll = GetComponent<Collider2D>();
+        number = 0;
     }
     void Start()
     {
@@ -21,22 +28,29 @@ public class Door : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        UpdateDoor();
     }
-    //打开门
-    public void OpenDoor()
+    //门开关逻辑
+     public void UpdateDoor()
     {
-        //关闭碰撞体
-        coll.enabled = false;
-        //设置sr组件的渲染为false
-        sr.enabled = false;
+        if (number >= demandnumber)
+        {
+            _isOpen = true;
+        }
+        else
+        {
+            _isOpen = false;
+        }
+        if (_isOpen)
+        {
+            coll.enabled = false;
+            sr.enabled = false;
+        }
+        else
+        {
+            coll.enabled = true;
+            sr.enabled = true;
+        }
     }
-    //关闭门
-    public void CloseDoor()
-    {
-        //开启碰撞体
-        coll.enabled = true;
-        //设置sr组件的渲染为true
-        sr.enabled = true;
-    }
+    
 }

@@ -12,7 +12,7 @@ public class GearButton : MonoBehaviour
     public bool _isPlayer;
     [Tooltip("激活状态")]
     public bool _isActivate;
-[Tooltip("控制的门")]
+    [Tooltip("控制的门")]
     public Door door;
 
     private Game game;
@@ -26,7 +26,7 @@ public class GearButton : MonoBehaviour
     }
     void Start()
     {
-        
+
     }
 
     void Update()
@@ -34,41 +34,26 @@ public class GearButton : MonoBehaviour
         //按键1
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            if (_isPlayer && !_isActivate&&game.gear[0]>=gear)
+            if (_isPlayer && !_isActivate && game.gear[0] >= gear)
             {
                 _isActivate = true;
                 game.gear[0] -= gear;
+                if (door != null)
+                {
+                    door.number++;
+                }
             }
         }
-        UpdateActivate();
+     
     }
     //激活逻辑
-void UpdateActivate()
-    {
-        if (_isActivate)
-        {
-            if (door!=null)
-            {
-                //打开门
-                door.OpenDoor();
-            }
-           
-        }
-        else
-        {
-            if (door!=null)
-            {
-                //关闭门
-                door.CloseDoor();
-            }
-        }
-    }
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-          _isPlayer = true;
+            _isPlayer = true;
 
         }
     }
