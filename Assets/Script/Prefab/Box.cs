@@ -18,14 +18,19 @@ public class Box : MonoBehaviour
     public int type;
 
     [Tooltip("箱子初始目标,0,前往初始点,1,前往目标点")]
-    public int goal;//1，前往初始点,1,前往目标点，
+    public int goal;
+
+[Tooltip("0，两世界显示，1，和平显示，战争隐藏，2，和平隐藏，战争显示")]
+public int display;
     private List<Vector3> PathNodes = new List<Vector3>();//记录箱子路径点位置
-    private Rigidbody2D rb;
-        private Game game;
+    
+    private Game game;
+    public Collider2D coll;
+    public SpriteRenderer sr;
 
     void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
+        
         game = GameObject.Find("GameManager").GetComponent<Game>();
         //记录路径点位置
         for (int i = 0; i < Nodes.Count; i++)
@@ -84,6 +89,42 @@ public class Box : MonoBehaviour
         {
             //根据世界移动
         }
-
+UpdateDisplay();
+    }
+    //显示逻辑
+    private void UpdateDisplay()
+    {
+        if (display == 0)
+        {
+            //两世界显示
+        }
+        else if (display == 1)
+        {
+            //和平显示
+            if (game.worldType == 0)
+            {
+                coll.enabled = true;
+                sr.enabled = true;
+            }
+            if (game.worldType == 1)
+            {
+                coll.enabled = false;
+                sr.enabled = false;
+            }
+        }
+        else if (display == 2)
+        {
+            //和平隐藏
+            if (game.worldType == 0)
+            {
+                coll.enabled = false;
+                sr.enabled = false;
+            }
+            if (game.worldType == 1)
+            {
+                coll.enabled = true;
+                sr.enabled = true;
+            }
+        }
     }
 }

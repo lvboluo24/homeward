@@ -117,6 +117,9 @@ MonoBehaviour:
   index: 0
   type: 0
   goal: 1
+  display: 0
+  coll: {fileID: 6189627686274868720}
+  sr: {fileID: 9030755678290322309}
 --- !u!1 &8527825377749564795
 GameObject:
   m_ObjectHideFlags: 0

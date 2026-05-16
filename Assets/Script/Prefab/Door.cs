@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
-    //定义collider组件
+
     private Collider2D coll;
-    //定义sr组件
     private SpriteRenderer sr;
     void Awake()
     {
