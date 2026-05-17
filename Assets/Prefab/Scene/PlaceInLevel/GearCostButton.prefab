@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9165742737026419224}
   - component: {fileID: 2114467400382567158}
   - component: {fileID: 3741175640072409360}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GearCostButton
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -50,6 +50,7 @@ MonoBehaviour:
   gear: 1
   _isPlayer: 0
   _isActivate: 0
+  door: {fileID: 0}
 --- !u!58 &2114467400382567158
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -124,7 +125,7 @@ GameObject:
   - component: {fileID: 2081990741741772227}
   - component: {fileID: 7503431447984317435}
   - component: {fileID: 4180586176593442297}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: interaction
   m_TagString: Untagged
   m_Icon: {fileID: 0}

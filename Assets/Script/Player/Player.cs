@@ -151,12 +151,14 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        //小齿轮
-        if (other.collider.CompareTag("SmallGear"))
+        //齿轮
+        if (other.collider.CompareTag("Gear"))
         {
+            //获取齿轮脚本
+            Gear gearScript = other.collider.GetComponent<Gear>();
+            game.gear[gearScript.type] += 1;
             other.gameObject.SetActive(false);
-            //增加小齿轮数量
-            game.gear[0] += 1;
+
         }
         //尖刺
         if (other.collider.CompareTag("Spike"))

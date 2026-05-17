@@ -9,12 +9,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 234218875943540166}
+  - component: {fileID: 3056656257062645004}
   - component: {fileID: 4621161701906133566}
   - component: {fileID: 1056545085177457180}
   - component: {fileID: 1797058747093039098}
   m_Layer: 0
   m_Name: SmallGear
-  m_TagString: SmallGear
+  m_TagString: Gear
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34,6 +35,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3056656257062645004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3533830621728107364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef28da3816130eb479daacb30033996a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
 --- !u!212 &4621161701906133566
 SpriteRenderer:
   m_ObjectHideFlags: 0

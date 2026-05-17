@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9214516285134188247}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1024248869806807261}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1629265447985579555}
   - component: {fileID: 1175636002098745183}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MovingPlatform
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -116,6 +116,7 @@ MonoBehaviour:
   speed: 5
   index: 0
   type: 0
+  worldType: 0
   goal: 1
   display: 0
   coll: {fileID: 6189627686274868720}
@@ -132,7 +133,7 @@ GameObject:
   - component: {fileID: 9030755678290322309}
   - component: {fileID: 6189627686274868720}
   - component: {fileID: 2059997969326009020}
-  m_Layer: 10
+  m_Layer: 7
   m_Name: MovingPlatformBase
   m_TagString: Ground
   m_Icon: {fileID: 0}

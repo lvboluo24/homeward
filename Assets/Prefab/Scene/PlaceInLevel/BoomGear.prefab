@@ -9,12 +9,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6346113764993401879}
+  - component: {fileID: 3818035670205676439}
   - component: {fileID: 5772957988116378745}
   - component: {fileID: 7536501025621125975}
   - component: {fileID: 3602196573543732715}
   m_Layer: 0
   m_Name: BoomGear
-  m_TagString: Untagged
+  m_TagString: Gear
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34,6 +35,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3818035670205676439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5390831001158391761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef28da3816130eb479daacb30033996a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
 --- !u!212 &5772957988116378745
 SpriteRenderer:
   m_ObjectHideFlags: 0
