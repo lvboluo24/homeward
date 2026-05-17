@@ -85175,14 +85175,6 @@ PrefabInstance:
       propertyPath: groundLayer.m_Bits
       value: 128
       objectReference: {fileID: 0}
-    - target: {fileID: 3159721703927389489, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
-      propertyPath: m_Parameters.colorGradient.key0.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3159721703927389489, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
-      propertyPath: m_Parameters.colorGradient.key0.g
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5212562709181035875, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
       propertyPath: m_GravityScale
       value: 3
