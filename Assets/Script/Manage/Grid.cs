@@ -10,9 +10,6 @@ public class Grid : MonoBehaviour
     [Tooltip("战争世界显示瓦片，和平世界隐藏瓦片")]
     public List<GameObject> WarNodes = new List<GameObject>();
 
-
-
-
     private Game game;
     void Awake()
     {
@@ -21,7 +18,7 @@ public class Grid : MonoBehaviour
     }
     void Start()
     {
-
+        CheckWorldType();
     }
 
     // Update is called once per frame

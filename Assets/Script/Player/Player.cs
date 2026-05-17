@@ -108,19 +108,19 @@ public class Player : MonoBehaviour
         //左右移动控制
         rb.velocity = new Vector2(horizontalInput * speed, rb.velocity.y);
         //跳跃控制
-       
-            if (_isJump)
-            {
-                rb.velocity = new Vector2(rb.velocity.x, jump);
-                _isJump = false;
-            }
-        
-        
+
+        if (_isJump)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, jump);
+            _isJump = false;
+        }
+
+
         //上爬梯子控制
         if (_isLadder)
         {
             rb.velocity = new Vector2(rb.velocity.x, verticalInput * climbSpeed);
-            
+
         }
 
 
@@ -145,7 +145,7 @@ public class Player : MonoBehaviour
             Debug.Log("不在梯子上");
         }
     }
-    
+
     private void OnCollisionEnter2D(Collision2D other)
     {
         //小齿轮
@@ -161,13 +161,19 @@ public class Player : MonoBehaviour
             //死亡
             StartCoroutine(Death());
         }
+        //追杀怪
+        if (other.collider.CompareTag("Chase"))
+        {
+            //死亡
+            StartCoroutine(Death());
+        }
     }
     //死亡协程
     private IEnumerator Death()
     {
         // 玩家死亡逻辑
         yield return new WaitForSeconds(0.5f);
-//找到A节点
+        //找到A节点
         GameObject ReviveNode = GameObject.Find("ReviveNode");
         //遍历A节点下的脚本Revive
         foreach (Transform child in ReviveNode.transform)

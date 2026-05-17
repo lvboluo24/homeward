@@ -50,17 +50,24 @@ public class ThrowItem2D : MonoBehaviour
         if (isThrowBoom)
         {
             // 2. 更新抛物线轨迹
-        UpdateTrajectoryLine();
+            UpdateTrajectoryLine();
 
-        // 3. 左键投掷
-        if (Input.GetMouseButtonDown(0) && game.gear[1] > 0)
+            // 3. 左键投掷
+            if (Input.GetMouseButtonDown(0) && game.gear[1] > 0)
+            {
+                ThrowObject();
+                game.gear[1]--;
+            }
+            //显示瞄准范围
+            line.enabled = true;
+        }
+        else
         {
-            ThrowObject();
-            game.gear[1]--;
-        }
+            //隐藏瞄准范围
+            line.enabled = false;
         }
 
-        
+
     }
 
     // 投掷逻辑
@@ -70,7 +77,7 @@ public class ThrowItem2D : MonoBehaviour
 
         // 向前偏移算出真实生成位置
         Vector2 spawnPos = (Vector2)transform.position + aimDir * spawnOffset;
-        
+
         // 实例化
         GameObject throwObj = Instantiate(throwPrefab, spawnPos, Quaternion.identity);
         Rigidbody2D rb = throwObj.GetComponent<Rigidbody2D>();
@@ -102,4 +109,6 @@ public class ThrowItem2D : MonoBehaviour
             line.SetPosition(i, points[i]);
         }
     }
+
+
 }
