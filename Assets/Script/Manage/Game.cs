@@ -52,7 +52,7 @@ public class Game : MonoBehaviour
     //检查世界类型
     public void CheckWorldType()
     {
-//如果按键q，切换世界类型为和平
+        //如果按键q，切换世界类型为和平
         if (Input.GetKeyDown(KeyCode.Q))
         {
             if (worldType == 0)
@@ -64,6 +64,17 @@ public class Game : MonoBehaviour
                 worldType = 0;
             }
             grid.CheckWorldType();
+        }
+    }
+    //检查齿轮
+    public void CheckGear()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            if (gear[1] > 0)
+            {
+                gear[1]--;
+            }
         }
     }
 }

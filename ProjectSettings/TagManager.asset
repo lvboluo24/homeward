@@ -15,6 +15,7 @@ TagManager:
   - Ladder
   - SmallGear
   - Spike
+  - Chase
   layers:
   - Default
   - TransparentFX

@@ -18757,6 +18757,10 @@ PrefabInstance:
       propertyPath: gear.Array.data[0]
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1660454452807680991, guid: 77ba3efc342d78241b33e1a29418e33a, type: 3}
+      propertyPath: gear.Array.data[1]
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7083329177596451227, guid: 77ba3efc342d78241b33e1a29418e33a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -84867,12 +84871,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 275140626}
     m_Modifications:
     - target: {fileID: 718799144901677972, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 718799144901677972, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 65.29
+      value: 42.54
       objectReference: {fileID: 0}
     - target: {fileID: 718799144901677972, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 18.49
+      value: -1.09
       objectReference: {fileID: 0}
     - target: {fileID: 718799144901677972, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -84917,6 +84925,14 @@ PrefabInstance:
     - target: {fileID: 2441475169373658686, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
       propertyPath: rayDownLength
       value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3159721703927389489, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3159721703927389489, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.g
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5212562709181035875, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
       propertyPath: m_GravityScale

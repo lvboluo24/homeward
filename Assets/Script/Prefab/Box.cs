@@ -39,7 +39,7 @@ public class Box : MonoBehaviour
         for (int i = 0; i < Nodes.Count; i++)
         {
             PathNodes.Add(Nodes[i].transform.position);
-            Debug.Log(PathNodes[i]);
+
         }
 
     }
