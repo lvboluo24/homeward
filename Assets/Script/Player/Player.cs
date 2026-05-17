@@ -151,6 +151,13 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
+        //怀表
+        if (other.collider.CompareTag("Watch"))
+        {
+            //隐藏
+            other.gameObject.SetActive(false);
+            game._isWatch = true;
+        }
         //齿轮
         if (other.collider.CompareTag("Gear"))
         {
@@ -163,14 +170,12 @@ public class Player : MonoBehaviour
         //尖刺
         if (other.collider.CompareTag("Spike"))
         {
-            //死亡
+
             StartCoroutine(Death());
         }
         //追杀怪
         if (other.collider.CompareTag("Chase"))
         {
-            //死亡
-            Debug.Log("死亡");
             StartCoroutine(Death());
         }
     }

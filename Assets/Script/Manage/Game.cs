@@ -15,6 +15,10 @@ public class Game : MonoBehaviour
 
     [Tooltip("当前拥有的齿轮数量，0，小齿轮，1，手雷齿轮，2，地雷齿轮，3，大齿轮")]
     public List<int> gear = new List<int>() {0,0,0,0};
+
+    [Tooltip("是否持有怀表")]
+    public bool _isWatch;
+
     private Player player;
     private MainCamera mainCamera;
     private Grid grid;

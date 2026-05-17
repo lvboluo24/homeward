@@ -84530,10 +84530,9 @@ GameObject:
   - component: {fileID: 2071262370}
   - component: {fileID: 2071262372}
   - component: {fileID: 2071262371}
-  - component: {fileID: 2071262373}
   m_Layer: 0
   m_Name: PocketWatch
-  m_TagString: Untagged
+  m_TagString: Watch
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84640,18 +84639,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2071262373
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2071262369}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 402f59b98d0cc034f846346066108021, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PocketWatch
 --- !u!1 &2095994875
 GameObject:
   m_ObjectHideFlags: 0
@@ -85121,11 +85108,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 718799144901677972, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 64.76
+      value: -2.07
       objectReference: {fileID: 0}
     - target: {fileID: 718799144901677972, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 23.06
+      value: -3.1
       objectReference: {fileID: 0}
     - target: {fileID: 718799144901677972, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
       propertyPath: m_LocalPosition.z

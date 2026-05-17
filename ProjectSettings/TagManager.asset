@@ -16,6 +16,7 @@ TagManager:
   - SmallGear
   - Spike
   - Chase
+  - Watch
   layers:
   - Default
   - TransparentFX
