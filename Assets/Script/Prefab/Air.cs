@@ -4,10 +4,18 @@ using UnityEngine;
 
 public class Air : MonoBehaviour
 {
-    List<GameObject> item = new List<GameObject>();
-    Rigidbody2D playerRb;
+
+
     [Tooltip("喷气推力大小")]
-    public float pushForce = 15f;
+    public float pushForce;
+    [Tooltip("是否喷气")]
+    public bool _isAir;
+    [Tooltip("喷气需要的激活数量")]
+    public int demandnumber;
+    [Tooltip("喷气当前激活数量")]
+    public int number;
+
+
     void Start()
     {
 
@@ -16,35 +24,41 @@ public class Air : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (number >= demandnumber)
+        {
+            _isAir = true;
+        }
+        else
+        {
+            _isAir = false;
+        }
     }
     // 当物体进入触发器
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // 检测是否是玩家
-        if(other.CompareTag("Player"))
-        {
-            playerRb = other.GetComponent<Rigidbody2D>();
-        }
+
     }
 
     // 当物体停留在触发器里 —— 每帧执行
     private void OnTriggerStay2D(Collider2D other)
     {
-        // 如果有玩家刚体，就持续施加向上的力
-        if(playerRb != null)
+        if (_isAir)
         {
-            // 2D 向上推力（AddForce 适合平滑上升）
-            playerRb.velocity = new Vector2(playerRb.velocity.x, pushForce);
+            //如果物体有Rigidbody2D
+            if (other.GetComponent<Rigidbody2D>() != null)
+            {
+                Rigidbody2D itemRb = other.GetComponent<Rigidbody2D>();
+                itemRb.velocity = new Vector2(itemRb.velocity.x, pushForce);
+                Debug.Log(other.gameObject.name);
+                Debug.Log(itemRb.velocity);
+            }
         }
+
     }
 
     // 当物体离开触发器
     private void OnTriggerExit2D(Collider2D other)
     {
-        if(other.CompareTag("Player"))
-        {
-            playerRb = null;
-        }
+
     }
 }

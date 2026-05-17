@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5391685514922476242}
   - component: {fileID: 6069737154825114546}
   - component: {fileID: 3329818863406933813}
-  - component: {fileID: 1936516185622110765}
   m_Layer: 14
   m_Name: Scope
   m_TagString: Untagged
@@ -47,6 +46,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isPlayer: 0
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!58 &3329818863406933813
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -82,33 +84,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 8
---- !u!50 &1936516185622110765
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7633978274611989462}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &8101355642120941800
 GameObject:
   m_ObjectHideFlags: 0

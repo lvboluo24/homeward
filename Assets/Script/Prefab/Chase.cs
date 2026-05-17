@@ -10,6 +10,7 @@ public class Chase : MonoBehaviour
     private Player player;
     public Scope scope;
     private Rigidbody2D rb;
+
     void Start()
     {
         game = GameObject.Find("GameManager").GetComponent<Game>();
@@ -30,6 +31,10 @@ public class Chase : MonoBehaviour
 
             // 2. 2D物理移动：固定速度追踪玩家（无惯性、平滑追踪）
             rb.velocity = moveDirection * moveSpeed;
+        }
+        else
+        {
+            rb.velocity = new Vector2(0, rb.velocity.y);
         }
     }
 }

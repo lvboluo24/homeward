@@ -13,6 +13,8 @@ public class TouchButton : MonoBehaviour
 
         [Tooltip("控制的门")]
     public Door door;
+    [Tooltip("控制的喷气")]
+    public Air air;
     void Start()
     {
 
@@ -33,6 +35,11 @@ public class TouchButton : MonoBehaviour
                 //打开门
                 door.number++;
             }
+            if (air != null)
+            {
+                //打开喷气
+                air.number++;
+            }
         }
         if (type == 1)
         {
@@ -41,6 +48,11 @@ public class TouchButton : MonoBehaviour
             {
                 //打开门
                 door.number++;
+            }
+            if (air != null)
+            {
+                //打开喷气
+                air.number++;
             }
         }
     }
@@ -53,6 +65,11 @@ public class TouchButton : MonoBehaviour
             {
                 //关闭门
                 door.number--;
+            }
+            if (air != null)
+            {
+                //关闭喷气
+                air.number--;
             }
         }
     }

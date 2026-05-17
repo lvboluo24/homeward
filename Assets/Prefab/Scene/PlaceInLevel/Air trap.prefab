@@ -47,6 +47,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushForce: 3
+  _isAir: 0
+  demandnumber: 1
+  number: 0
 --- !u!212 &2309323289657102120
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -17,6 +17,7 @@ TagManager:
   - Spike
   - Chase
   - Watch
+  - Air
   layers:
   - Default
   - TransparentFX

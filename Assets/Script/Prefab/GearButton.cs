@@ -14,6 +14,7 @@ public class GearButton : MonoBehaviour
     public bool _isActivate;
     [Tooltip("控制的门")]
     public Door door;
+    public Air air;
 
     private Game game;
 
@@ -41,6 +42,10 @@ public class GearButton : MonoBehaviour
                 if (door != null)
                 {
                     door.number++;
+                }
+                if (air != null)
+                {
+                    air.number++;
                 }
             }
         }
