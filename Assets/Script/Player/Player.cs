@@ -38,6 +38,9 @@ public class Player : MonoBehaviour
 
     [Tooltip("是否跳跃")]
     public bool _isJump;
+    
+    [Tooltip("地面层掩码")]
+    public LayerMask groundLayer;
 
     public PlayerState currentState;
 
@@ -165,6 +168,7 @@ public class Player : MonoBehaviour
         if (other.collider.CompareTag("Chase"))
         {
             //死亡
+            Debug.Log("死亡");
             StartCoroutine(Death());
         }
     }
@@ -248,11 +252,18 @@ public class Player : MonoBehaviour
         // 计算射线起点
         Vector2 rayStart = (Vector2)transform.position + rayOffset;
         // 向下发射射线
-        RaycastHit2D hit = Physics2D.Raycast(rayStart, Vector2.down, rayDownLength);
+        RaycastHit2D hit = Physics2D.Raycast(rayStart, Vector2.down, rayDownLength,groundLayer);
 
-        // 有碰撞体 且 标签是Ground
-        _isGrounded = hit.collider != null && hit.collider.CompareTag("Ground");
-    }
+        // 有碰撞体,不是触发器 且 标签是Ground
+        if (hit.collider != null && hit.collider.CompareTag("Ground") && !hit.collider.isTrigger)
+        {
+            _isGrounded = true;
+               }
+        else
+        {
+            _isGrounded = false;
+        }
+        }
 
     public void OnDrawGizmosSelected()
     {
