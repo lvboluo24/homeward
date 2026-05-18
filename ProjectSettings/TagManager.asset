@@ -19,6 +19,7 @@ TagManager:
   - Watch
   - Air
   - Sniper
+  - Fragile
   layers:
   - Default
   - TransparentFX
