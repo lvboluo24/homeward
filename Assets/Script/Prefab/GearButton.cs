@@ -12,8 +12,11 @@ public class GearButton : MonoBehaviour
     public bool _isPlayer;
     [Tooltip("激活状态")]
     public bool _isActivate;
+    [Tooltip("齿轮消失")]
+    public bool _isDisappear;
     [Tooltip("控制的门")]
     public Door door;
+    [Tooltip("控制的空气机关")]
     public Air air;
 
     private Game game;
@@ -46,6 +49,10 @@ public class GearButton : MonoBehaviour
                 if (air != null)
                 {
                     air.number++;
+                }
+                if (_isDisappear)
+                {
+                    gameObject.SetActive(false);
                 }
             }
         }

@@ -8,13 +8,13 @@ public class Game : MonoBehaviour
     [Tooltip("当前关卡")]
     public int level;
     [Tooltip("玩家在地图x，y坐标")]
-    public int x,y;
+    public int x, y;
 
     [Tooltip("和平（0）/战争（1）世界")]
     public int worldType;
 
     [Tooltip("当前拥有的齿轮数量，0，小齿轮，1，手雷齿轮，2，地雷齿轮，3，大齿轮")]
-    public List<int> gear = new List<int>() {0,0,0,0};
+    public List<int> gear = new List<int>() { 0, 0, 0, 0 };
 
     [Tooltip("是否持有怀表")]
     public bool _isWatch;
@@ -46,9 +46,9 @@ public class Game : MonoBehaviour
         if (level == 1)
         {
             //x为玩家x位置除以17.77777f的整数
-            x = (int)((player.transform.position.x+8.88888f)/17.77777f);
+            x = (int)((player.transform.position.x + 8.88888f) / 17.77777f);
             //y为玩家y位置除以10的整数
-            y = (int)((player.transform.position.y+5)/10);
+            y = (int)((player.transform.position.y + 5) / 10);
         }
         mainCamera.x = x;
         mainCamera.y = y;
@@ -59,15 +59,19 @@ public class Game : MonoBehaviour
         //如果按键q，切换世界类型为和平
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            if (worldType == 0)
+            if (_isWatch && gear[3] > 0)
             {
-                worldType = 1;
+                if (worldType == 0)
+                {
+                    worldType = 1;
+                }
+                else if (worldType == 1)
+                {
+                    worldType = 0;
+                }
+                grid.CheckWorldType();
             }
-            else if (worldType == 1)
-            {
-                worldType = 0;
-            }
-            grid.CheckWorldType();
+
         }
     }
     //检查齿轮
