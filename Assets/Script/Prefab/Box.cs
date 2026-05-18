@@ -27,11 +27,14 @@ public class Box : MonoBehaviour
     public int display;
     [Tooltip("是否传送回初始点")]
     public bool _isReturn;
+    [Tooltip("是否有重力")]
+    public bool _isGravity;
     private List<Vector3> PathNodes = new List<Vector3>();//记录箱子路径点位置
 
     private Game game;
     public Collider2D coll;
     public SpriteRenderer sr;
+    public Rigidbody2D rb;
 
     void Awake()
     {
@@ -54,10 +57,23 @@ public class Box : MonoBehaviour
     {
 
         //移动逻辑
-        transform.position = Vector3.MoveTowards(
+        if (_isGravity)
+        {
+            //计算x方向移动方向
+            Vector2 moveDirection = (PathNodes[index] - transform.position).normalized;
+            //设置速度
+            rb.velocity = new Vector2(moveDirection.x * speed, rb.velocity.y);
+
+            
+        }
+        else
+        {
+             transform.position = Vector3.MoveTowards(
         transform.position,
         PathNodes[index],
         speed * Time.deltaTime);
+        }
+       
         //到达目标点逻辑
         if (Vector3.Distance(transform.position, PathNodes[index]) < 0.1f)
         {
