@@ -178,6 +178,15 @@ public class Player : MonoBehaviour
         {
             StartCoroutine(Death());
         }
+        //幽灵
+        if (other.collider.CompareTag("Ghost"))
+        {
+            Ghost ghostScript = other.collider.GetComponent<Ghost>();
+            if(ghostScript.type == game.worldType)
+            {
+                StartCoroutine(Death());
+            }
+        }
     }
     //死亡协程
     private IEnumerator Death()

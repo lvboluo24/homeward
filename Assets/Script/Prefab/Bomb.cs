@@ -30,6 +30,12 @@ public class Bomb : MonoBehaviour
                 // 爆炸时，与Spike标签碰撞的物体，会销毁
                 Destroy(other.gameObject);
             }
+            if (other.CompareTag("Fragile"))
+            {
+                Debug.Log("爆炸时，与Fragile标签碰撞的物体，会销毁");
+                // 爆炸时，与Fragile标签碰撞的物体，会销毁
+                Destroy(other.gameObject);
+            }
         }
         
     }

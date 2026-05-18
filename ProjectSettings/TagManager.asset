@@ -18,6 +18,9 @@ TagManager:
   - Chase
   - Watch
   - Air
+  - Sniper
+  - Fragile
+  - Ghost
   layers:
   - Default
   - TransparentFX

@@ -18,6 +18,7 @@ public class Game : MonoBehaviour
 
     [Tooltip("是否持有怀表")]
     public bool _isWatch;
+    public List<Box> boxes = new List<Box>();
 
     private Player player;
     private MainCamera mainCamera;
@@ -27,7 +28,7 @@ public class Game : MonoBehaviour
         player = GameObject.FindWithTag("Player").GetComponent<Player>();
         mainCamera = GameObject.Find("Main Camera").GetComponent<MainCamera>();
         grid = GameObject.Find("GridManager").GetComponent<Grid>();
-
+        boxes = new List<Box>(Object.FindObjectsOfType<Box>());
 
     }
     void Start()
@@ -70,7 +71,12 @@ public class Game : MonoBehaviour
                     worldType = 0;
                 }
                 grid.CheckWorldType();
+                foreach (Box box in boxes)
+                {
+                    box.UpdateWorld();
+                }
             }
+
 
         }
     }
