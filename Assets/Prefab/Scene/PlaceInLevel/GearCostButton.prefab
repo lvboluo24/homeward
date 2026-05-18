@@ -50,7 +50,9 @@ MonoBehaviour:
   gear: 1
   _isPlayer: 0
   _isActivate: 0
+  _isDisappear: 1
   door: {fileID: 0}
+  air: {fileID: 0}
 --- !u!58 &2114467400382567158
 CircleCollider2D:
   m_ObjectHideFlags: 0
