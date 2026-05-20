@@ -24,6 +24,10 @@ TagManager:
   - Arrow
   - One
   - Mine
+  - LoopDisplay
+  - LoopHide
+  - LoopEnd
+  - LoopStart
   layers:
   - Default
   - TransparentFX
