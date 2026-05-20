@@ -22,6 +22,8 @@ TagManager:
   - Fragile
   - Ghost
   - Arrow
+  - One
+  - Mine
   layers:
   - Default
   - TransparentFX

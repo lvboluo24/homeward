@@ -4,7 +4,7 @@ using System.Collections.Generic;
 [RequireComponent(typeof(LineRenderer))]
 public class ThrowItem2D : MonoBehaviour
 {
-    [Header("投掷基础")]
+    [Header("投掷预制体")]
     public GameObject throwPrefab;
     [Tooltip("投掷力度")]
     public float throwForce = 12f;

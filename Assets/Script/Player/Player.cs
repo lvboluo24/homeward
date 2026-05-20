@@ -275,8 +275,8 @@ public class Player : MonoBehaviour
         // 向下发射射线
         RaycastHit2D hit = Physics2D.Raycast(rayStart, Vector2.down, rayDownLength,groundLayer);
 
-        // 有碰撞体,不是触发器 且 标签是Ground
-        if (hit.collider != null && hit.collider.CompareTag("Ground") && !hit.collider.isTrigger)
+        // 有碰撞体,不是触发器 且 图层是Ground
+        if (hit.collider != null  && !hit.collider.isTrigger)
         {
             _isGrounded = true;
                }
