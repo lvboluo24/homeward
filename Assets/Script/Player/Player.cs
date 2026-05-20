@@ -187,6 +187,11 @@ public class Player : MonoBehaviour
                 StartCoroutine(Death());
             }
         }
+        //箭
+        if (other.collider.CompareTag("Arrow"))
+        {
+            StartCoroutine(Death());
+        }
     }
     //死亡协程
     private IEnumerator Death()

@@ -21,6 +21,7 @@ TagManager:
   - Sniper
   - Fragile
   - Ghost
+  - Arrow
   layers:
   - Default
   - TransparentFX
