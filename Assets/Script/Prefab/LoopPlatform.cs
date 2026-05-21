@@ -30,39 +30,17 @@ public class LoopPlatform : MonoBehaviour
         PathNodes[index].transform.position,
         platformSpeed * Time.deltaTime);
         }
+         if (Vector3.Distance(transform.position, PathNodes[index].transform.position) < 0.1f)
+        {
+            //如果到达目标点,摧毁
+            Destroy(gameObject);
+
+        }
 
     }
     //进入
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("LoopStart"))
-        {
-            if (index == 0)
-            {
-                //摧毁
-                Destroy(gameObject);
-            }
-
-        }
-        if (other.CompareTag("LoopEnd"))
-        {
-            if (index == 1)
-            {
-                //摧毁
-                Destroy(gameObject);
-            }
-        }
-        if (other.CompareTag("LoopDisplay"))
-        {
-            Debug.Log("显示");
-            //显示
-            spRenderer.enabled = true;
-        }
-        if (other.CompareTag("LoopHide"))
-        {
-            Debug.Log("隐藏");
-            //隐藏
-            spRenderer.enabled = false;
-        }
+        
     }
 }

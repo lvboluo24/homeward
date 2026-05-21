@@ -18,6 +18,8 @@ public class GearButton : MonoBehaviour
     public Door door;
     [Tooltip("控制的空气机关")]
     public Air air;
+    [Tooltip("控制的循环平台")]
+    public Looping looping;
 
     private Game game;
 
@@ -49,6 +51,19 @@ public class GearButton : MonoBehaviour
                 if (air != null)
                 {
                     air.number++;
+                }
+                if (looping != null)
+                {
+                    if (looping.platformType == 0)
+                    {
+                        looping.platformType = 1;
+                    }
+                    else
+                    {
+                        looping.platformType = 0;
+                    }
+                    //找到所有子节点
+                    looping.FindAllChildren();
                 }
                 if (_isDisappear)
                 {

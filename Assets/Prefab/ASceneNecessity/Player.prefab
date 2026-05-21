@@ -333,7 +333,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 6
   jump: 8
-  climbSpeed: 0
+  climbSpeed: 4
   rayDownLength: 0.5
   horizontalInput: 0
   verticalInput: 0
