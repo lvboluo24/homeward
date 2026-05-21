@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6361519911082745705}
   - component: {fileID: 4999192991094082182}
   - component: {fileID: 5295906844608719268}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Fragile
   m_TagString: Fragile
   m_Icon: {fileID: 0}
