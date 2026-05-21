@@ -14,7 +14,7 @@ public class Box : MonoBehaviour
     [Tooltip("箱子当前路径索引")]
     public int index;
 
-    [Tooltip("箱子移动类型,0,自动往返，1，根据世界移动，")]
+    [Tooltip("箱子移动类型,0,自动往返，1，根据世界移动，2,切换一次变化")]
     public int type;
 
     [Tooltip("箱子世界类型,0,和平前往终点，1，战争前往终点")]
@@ -29,10 +29,12 @@ public class Box : MonoBehaviour
     public bool _isReturn;
     [Tooltip("是否有重力")]
     public bool _isGravity;
+
     private List<Vector3> PathNodes = new List<Vector3>();//记录箱子路径点位置
 
     private Game game;
     public Collider2D coll;
+    public Scope scope;
     public SpriteRenderer sr;
     public Rigidbody2D rb;
 
@@ -64,16 +66,16 @@ public class Box : MonoBehaviour
             //设置速度
             rb.velocity = new Vector2(moveDirection.x * speed, rb.velocity.y);
 
-            
+
         }
         else
         {
-             transform.position = Vector3.MoveTowards(
-        transform.position,
-        PathNodes[index],
-        speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(
+       transform.position,
+       PathNodes[index],
+       speed * Time.deltaTime);
         }
-       
+
         //到达目标点逻辑
         if (Vector3.Distance(transform.position, PathNodes[index]) < 0.1f)
         {
@@ -81,6 +83,26 @@ public class Box : MonoBehaviour
 
         }
         UpdateDisplay();
+        //在范围按Q键
+        if (type == 2)
+        {
+            if (scope._isPlayer && Input.GetKeyDown(KeyCode.Q))
+            {
+                Debug.Log("按Q键");
+                if (goal == 1)
+                {
+                    goal = 0;
+                    transform.position = PathNodes[0];
+                    index = 0;
+                }
+                else if (goal == 0)
+                {
+                    goal = 1;
+                }
+
+            }
+        }
+            
     }
     public void UpdateWorld()
     {
@@ -152,13 +174,13 @@ public class Box : MonoBehaviour
                     }
                     else
                     {
-                    //如果未到达初始点
-                    if (index > 0)
-                    {
-                        index--;
+                        //如果未到达初始点
+                        if (index > 0)
+                        {
+                            index--;
+                        }
                     }
-                    }
-                    
+
                 }
 
             }
@@ -175,31 +197,49 @@ public class Box : MonoBehaviour
                     }
                     else
                     {
-                                            //如果未到达初始点
-                    if (index > 0)
-                    {
-                        index--;
-                    }
+                        //如果未到达初始点
+                        if (index > 0)
+                        {
+                            index--;
+                        }
                     }
 
                 }
                 //如果为战争世界
                 else if (game.worldType == 1)
                 {
-                    
-                   
-                    
+
                     //如果未到达终点
                     if (index < PathNodes.Count - 1)
                     {
                         index++;
                     }
-                    
+
 
                 }
             }
 
         }
+        //2，激活一次变化形态
+        else if (type == 2)
+        {
+            //如果目标点为终点
+            if (goal == 1)
+            {
+                if (index < PathNodes.Count - 1)
+                {
+                    index++;
+                }
+            }
+            //如果目标点为起点
+            else if (goal == 0)
+            {
+
+            }
+
+            
+        }
+
     }
     //显示逻辑
     private void UpdateDisplay()

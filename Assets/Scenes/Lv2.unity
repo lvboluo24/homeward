@@ -34620,6 +34620,18 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -1.86
       objectReference: {fileID: 0}
+    - target: {fileID: 7032522381548737324, guid: 0bce6f2eeee524f40b3051e57a6ab21e, type: 3}
+      propertyPath: goal
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7032522381548737324, guid: 0bce6f2eeee524f40b3051e57a6ab21e, type: 3}
+      propertyPath: type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7032522381548737324, guid: 0bce6f2eeee524f40b3051e57a6ab21e, type: 3}
+      propertyPath: _isReturn
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7505691097848035549, guid: 0bce6f2eeee524f40b3051e57a6ab21e, type: 3}
       propertyPath: clipList.Array.data[0].clip
       value: 
@@ -57167,11 +57179,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 718799144901677972, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 29.446
+      value: 19.28
       objectReference: {fileID: 0}
     - target: {fileID: 718799144901677972, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.078
+      value: 13.82
       objectReference: {fileID: 0}
     - target: {fileID: 718799144901677972, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
       propertyPath: m_LocalPosition.z
