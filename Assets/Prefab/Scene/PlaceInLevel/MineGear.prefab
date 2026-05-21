@@ -10,11 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 5392492334231869407}
   - component: {fileID: 6908303480623306446}
+  - component: {fileID: 7110046369224982980}
   - component: {fileID: 1642925236461186149}
   - component: {fileID: 5151722596575193400}
   m_Layer: 0
   m_Name: MineGear
-  m_TagString: Untagged
+  m_TagString: Gear
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -86,6 +87,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7110046369224982980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5134516287472898622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef28da3816130eb479daacb30033996a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 2
 --- !u!58 &1642925236461186149
 CircleCollider2D:
   m_ObjectHideFlags: 0

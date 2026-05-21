@@ -10,12 +10,15 @@ public class Chase : MonoBehaviour
     private Player player;
     public Scope scope;
     private Rigidbody2D rb;
-
-    void Start()
+void Awake()
     {
         game = GameObject.Find("GameManager").GetComponent<Game>();
         player = GameObject.Find("Player").GetComponent<Player>();
         rb = GetComponent<Rigidbody2D>();
+    }
+    void Start()
+    {
+        
     }
 
 

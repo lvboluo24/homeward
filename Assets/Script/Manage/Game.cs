@@ -18,6 +18,12 @@ public class Game : MonoBehaviour
 
     [Tooltip("是否持有怀表")]
     public bool _isWatch;
+    [Tooltip("钟摆状态，0，无，1，钟摆自动摆动，2，间隙摆动")]
+    public int clockStatus;
+    [Tooltip("钟摆摆动时间")]
+    public float clockTime;
+    [Tooltip("钟摆间隙时间")]
+    public float clockGapTime;
     public List<Box> boxes = new List<Box>();
 
     private Player player;
@@ -33,7 +39,11 @@ public class Game : MonoBehaviour
     }
     void Start()
     {
-
+        if (level==3)
+        {
+            //启动钟摆协程
+            StartCoroutine(Clock());
+        }
     }
 
     void Update()
@@ -51,6 +61,16 @@ public class Game : MonoBehaviour
             //y为玩家y位置除以10的整数
             y = (int)((player.transform.position.y + 5) / 10);
         }
+        else if (level == 2)
+        {
+            x = (int)((player.transform.position.x + 8.88888f) / 17.77777f);
+            y = (int)((player.transform.position.y + 5) / 10);
+        }
+        else if (level == 3)
+        {
+            x = (int)((player.transform.position.x + 8.88888f) / 17.77777f);
+            y = (int)((player.transform.position.y + 5) / 10);
+        }
         mainCamera.x = x;
         mainCamera.y = y;
     }
@@ -60,26 +80,33 @@ public class Game : MonoBehaviour
         //如果按键q，切换世界类型为和平
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            if (_isWatch && gear[3] > 0)
+            if (level <= 2)
             {
-                if (worldType == 0)
+                if (_isWatch && gear[3] > 0)
                 {
-                    worldType = 1;
-                }
-                else if (worldType == 1)
-                {
-                    worldType = 0;
-                }
-                grid.CheckWorldType();
-                foreach (Box box in boxes)
-                {
-                    box.UpdateWorld();
+                    ConvertWorldType();
                 }
             }
-
-
         }
     }
+    //转换世界逻辑
+    public void ConvertWorldType()
+    {
+        if (worldType == 0)
+                    {
+                        worldType = 1;
+                    }
+                    else if (worldType == 1)
+                    {
+                        worldType = 0;
+                    }
+                    grid.CheckWorldType();
+                    foreach (Box box in boxes)
+                    {
+                        box.UpdateWorld();
+                    }
+    }
+
     //检查齿轮
     public void CheckGear()
     {
@@ -88,6 +115,20 @@ public class Game : MonoBehaviour
             if (gear[1] > 0)
             {
                 gear[1]--;
+            }
+        }
+    }
+    //协程
+    private IEnumerator Clock()
+    {
+        while (true)
+        {
+            //如果钟摆状态为1，自动摆动
+            if (clockStatus == 1)
+            {
+                //经过2秒
+                yield return new WaitForSeconds(clockTime);
+                ConvertWorldType();
             }
         }
     }

@@ -17,9 +17,13 @@ public class Sniper : MonoBehaviour
     public Transform arrowSpawnPoint;
     
 private Player player;
-    void Start()
+void Awake()
     {
         player = GameObject.Find("Player").GetComponent<Player>();
+    }
+    void Start()
+    {
+
     }
 
     // Update is called once per frame
