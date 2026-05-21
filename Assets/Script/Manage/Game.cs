@@ -39,7 +39,7 @@ public class Game : MonoBehaviour
     }
     void Start()
     {
-        if (level==3)
+        if (level==3&&clockStatus==1)
         {
             //启动钟摆协程
             StartCoroutine(Clock());
@@ -119,17 +119,19 @@ public class Game : MonoBehaviour
         }
     }
     //协程
-    private IEnumerator Clock()
+    public IEnumerator Clock()
     {
-        while (true)
+        int count = 0;
+        while (count<9999999)
         {
             //如果钟摆状态为1，自动摆动
             if (clockStatus == 1)
             {
                 //经过2秒
-                yield return new WaitForSeconds(clockTime);
+                yield return new WaitForSeconds(2f);
                 ConvertWorldType();
             }
+            count++;
         }
     }
 }
