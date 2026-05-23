@@ -45,7 +45,7 @@ public class Player : MonoBehaviour
     public PlayerState currentState;
 
 
-    private Rigidbody2D rb;
+    public Rigidbody2D rb;
     private Game game;
 
 
@@ -75,7 +75,7 @@ public class Player : MonoBehaviour
         else if (horizontalInput < -0.1f)
         {
             transform.localScale = new Vector3(scaleScale * 1f, transform.localScale.y, transform.localScale.z);
-        }
+        }      
         // 状态机更新，射线画线
         UpdateStateMachine();
         CheckGroundByTag();
