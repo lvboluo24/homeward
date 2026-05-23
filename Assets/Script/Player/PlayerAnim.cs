@@ -10,10 +10,13 @@ public class PlayerAnim : MonoBehaviour
     public bool _isrun;
     [Tooltip("是否正在梯子")]
     public bool _isLadder;
-    [Tooltip("是否跳跃向上")]
-    public bool _isJumpUp;
-    [Tooltip("是否跳跃向下")]
-    public bool _isJumpDown;
+    [Tooltip("是否跳跃")]
+    public bool _isJump;
+    [Tooltip("是否空中移动")]
+    public bool _isAirMove;
+
+
+
     void Start()
     {
 
@@ -26,9 +29,9 @@ public class PlayerAnim : MonoBehaviour
         anim.SetFloat("vertical", player.verticalInput);
         anim.SetBool("isrun", _isrun);
         anim.SetBool("isLadder", player._isLadder);
-        anim.SetBool("isJumpUp", _isJumpUp);
-        anim.SetBool("isJumpDown", _isJumpDown);
+        anim.SetBool("isJump", _isJump);
         anim.SetBool("isGrounded", player._isGrounded);
+        anim.SetBool("isAirMove", _isAirMove);
         if (player._isGrounded&&!player._isLadder&&player.horizontalInput!=0)
         {
             _isrun = true;
@@ -37,23 +40,23 @@ public class PlayerAnim : MonoBehaviour
         {
             _isrun = false;
         }
-        //如果player物体速度向上
-        if (!player._isGrounded&&player.rb.velocity.y>=0&&!player._isLadder)
+        if (!player._isGrounded&&!player._isLadder)
         {
-            _isJumpUp = true;
+            _isJump = true;
         }
         else
         {
-            _isJumpUp = false;
+            _isJump = false;
         }
-        //如果player物体速度向下
-        if (!player._isGrounded&&player.rb.velocity.y<=0&&!player._isLadder)
+        if (player.horizontalInput!=0)
         {
-            _isJumpDown = true;
+            _isAirMove = true;
         }
         else
         {
-            _isJumpDown = false;
+            _isAirMove = false;
         }
+
+
     }
 }

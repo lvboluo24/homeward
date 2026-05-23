@@ -345,7 +345,10 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 128
+  _isDead: 0
   currentState: 0
+  playerAnim: {fileID: 5541227166634158491}
+  rb: {fileID: 5212562709181035875}
 --- !u!114 &5541227166634158491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -360,6 +363,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 7088265103212110363}
   player: {fileID: 2441475169373658686}
+  _isrun: 0
+  _isLadder: 0
+  _isJump: 0
+  _isAirMove: 0
 --- !u!212 &6986709608083357851
 SpriteRenderer:
   m_ObjectHideFlags: 0

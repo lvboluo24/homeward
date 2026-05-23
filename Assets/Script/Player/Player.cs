@@ -38,13 +38,15 @@ public class Player : MonoBehaviour
 
     [Tooltip("是否跳跃")]
     public bool _isJump;
-    
+
     [Tooltip("地面层掩码")]
     public LayerMask groundLayer;
+    [Tooltip("是否死亡")]
+    public bool _isDead;
 
     public PlayerState currentState;
 
-
+public PlayerAnim playerAnim;
     public Rigidbody2D rb;
     private Game game;
 
@@ -75,7 +77,7 @@ public class Player : MonoBehaviour
         else if (horizontalInput < -0.1f)
         {
             transform.localScale = new Vector3(scaleScale * 1f, transform.localScale.y, transform.localScale.z);
-        }      
+        }
         // 状态机更新，射线画线
         UpdateStateMachine();
         CheckGroundByTag();
@@ -182,7 +184,7 @@ public class Player : MonoBehaviour
         if (other.collider.CompareTag("Ghost"))
         {
             Ghost ghostScript = other.collider.GetComponent<Ghost>();
-            if(ghostScript.type == game.worldType)
+            if (ghostScript.type == game.worldType)
             {
                 StartCoroutine(Death());
             }
@@ -191,27 +193,37 @@ public class Player : MonoBehaviour
         if (other.collider.CompareTag("Arrow"))
         {
             StartCoroutine(Death());
+            Debug.Log("被箭射中");
+
         }
     }
     //死亡协程
     private IEnumerator Death()
     {
-        // 玩家死亡逻辑
-        yield return new WaitForSeconds(0.5f);
-        //找到A节点
-        GameObject ReviveNode = GameObject.Find("ReviveNode");
-        //遍历A节点下的脚本Revive
-        foreach (Transform child in ReviveNode.transform)
+        if (!_isDead)
         {
-            //获取脚本Revive
-            Revive revive = child.GetComponent<Revive>();
-            //判断是否是当前玩家的复活点
-            if (revive.x == game.x && revive.y == game.y)
+            // 玩家死亡逻辑
+            _isDead = true;
+            playerAnim.anim.Play("die");
+            yield return new WaitForSeconds(1f);
+            _isDead = false;
+            playerAnim.anim.Play("idle");
+            //找到A节点
+            GameObject ReviveNode = GameObject.Find("ReviveNode");
+            //遍历A节点下的脚本Revive
+            foreach (Transform child in ReviveNode.transform)
             {
-                //复活
-                transform.position = child.position;
+                //获取脚本Revive
+                Revive revive = child.GetComponent<Revive>();
+                //判断是否是当前玩家的复活点
+                if (revive.x == game.x && revive.y == game.y)
+                {
+                    //复活
+                    transform.position = child.position;
+                }
             }
         }
+
     }
 
     void UpdateStateMachine()
@@ -273,18 +285,18 @@ public class Player : MonoBehaviour
         // 计算射线起点
         Vector2 rayStart = (Vector2)transform.position + rayOffset;
         // 向下发射射线
-        RaycastHit2D hit = Physics2D.Raycast(rayStart, Vector2.down, rayDownLength,groundLayer);
+        RaycastHit2D hit = Physics2D.Raycast(rayStart, Vector2.down, rayDownLength, groundLayer);
 
         // 有碰撞体,不是触发器 且 图层是Ground
-        if (hit.collider != null  && !hit.collider.isTrigger)
+        if (hit.collider != null && !hit.collider.isTrigger)
         {
             _isGrounded = true;
-               }
+        }
         else
         {
             _isGrounded = false;
         }
-        }
+    }
 
     public void OnDrawGizmosSelected()
     {
