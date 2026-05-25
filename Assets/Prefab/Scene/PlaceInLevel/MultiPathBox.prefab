@@ -88,7 +88,7 @@ MonoBehaviour:
   index: 0
   type: 1
   worldType: 0
-  goal: 1
+  goal: 0
   display: 0
   _isReturn: 0
   _isGravity: 0
