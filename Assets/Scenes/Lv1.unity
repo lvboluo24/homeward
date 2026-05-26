@@ -85650,11 +85650,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 718799144901677972, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.71
+      value: 29.29
       objectReference: {fileID: 0}
     - target: {fileID: 718799144901677972, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 17.73
+      value: 22.95
       objectReference: {fileID: 0}
     - target: {fileID: 718799144901677972, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -85712,6 +85712,10 @@ PrefabInstance:
       propertyPath: m_SleepingMode
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6207037135855771264, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 14cc2683f08837842ae4085523fb605f, type: 2}
     - target: {fileID: 6986709608083357851, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
       propertyPath: m_Enabled
       value: 1

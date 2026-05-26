@@ -43,7 +43,11 @@ public class Player : MonoBehaviour
     public LayerMask groundLayer;
     [Tooltip("是否死亡")]
     public bool _isDead;
-
+    [Tooltip("是否在移动平台")]
+    public bool _isMovingGround;
+[Tooltip("当前移动平台")]
+private Transform _currentPlatform;
+    private float _lastPlatformX;
     public PlayerState currentState;
 
 public PlayerAnim playerAnim;
@@ -78,9 +82,22 @@ public PlayerAnim playerAnim;
         {
             transform.localScale = new Vector3(scaleScale * 1f, transform.localScale.y, transform.localScale.z);
         }
+        //
         // 状态机更新，射线画线
         UpdateStateMachine();
         CheckGroundByTag();
+        // 移动平台
+        if (_currentPlatform != null)
+        {
+ float platformDeltaX = _currentPlatform.position.x - _lastPlatformX;
+            
+            // 直接给玩家叠加X轴移动（只改X！）
+            transform.position += new Vector3(platformDeltaX, 0, 0);
+            
+            // 更新记录值
+            _lastPlatformX = _currentPlatform.position.x;
+            
+        }
     }
     public void HandleMovement()
     {
@@ -195,6 +212,22 @@ public PlayerAnim playerAnim;
             StartCoroutine(Death());
             Debug.Log("被箭射中");
 
+        }
+       //移动平台
+        if (other.collider.CompareTag("MoveGround"))
+        {
+            _isMovingGround = true;
+           _currentPlatform = other.transform;
+            _lastPlatformX = _currentPlatform.position.x;
+        }
+
+    }
+    private void OnCollisionExit2D(Collision2D other)
+    {
+        if (other.collider.CompareTag("MoveGround"))
+        {
+_currentPlatform = null;
+_isMovingGround = false;
         }
     }
     //死亡协程

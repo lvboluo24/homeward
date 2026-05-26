@@ -119,8 +119,12 @@ MonoBehaviour:
   worldType: 0
   goal: 1
   display: 0
+  _isReturn: 0
+  _isGravity: 0
   coll: {fileID: 6189627686274868720}
+  scope: {fileID: 0}
   sr: {fileID: 9030755678290322309}
+  rb: {fileID: 0}
 --- !u!1 &8527825377749564795
 GameObject:
   m_ObjectHideFlags: 0
@@ -135,7 +139,7 @@ GameObject:
   - component: {fileID: 2059997969326009020}
   m_Layer: 7
   m_Name: MovingPlatformBase
-  m_TagString: Ground
+  m_TagString: MoveGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
