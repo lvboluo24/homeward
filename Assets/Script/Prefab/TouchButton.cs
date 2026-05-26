@@ -27,7 +27,10 @@ public class TouchButton : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (type == 0)
+        //如果不是标签为scope的物体，直接返回
+        if (other.tag != "Scope")
+        {
+            if (type == 0)
         {
             _isActivate = true;
             if (door != null)
@@ -55,10 +58,14 @@ public class TouchButton : MonoBehaviour
                 air.number++;
             }
         }
+        }
+        
     }
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (type == 1)
+         if (other.tag != "Scope")
+        {
+             if (type == 1)
         {
             _isTouch = false;
             if (door != null)
@@ -72,6 +79,8 @@ public class TouchButton : MonoBehaviour
                 air.number--;
             }
         }
+        }
+       
     }
     
 }

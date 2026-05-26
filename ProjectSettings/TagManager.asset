@@ -24,6 +24,7 @@ TagManager:
   - Arrow
   - One
   - Mine
+  - Scope
   layers:
   - Default
   - TransparentFX
