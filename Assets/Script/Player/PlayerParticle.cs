@@ -24,25 +24,21 @@ public class PlayerParticle : MonoBehaviour
         if (currentGrounded && !lastGrounded)
         {
             ps.Play();
-            Debug.Log("播放粒子");
+
         }
         // 只有 从“在地面”变成“不在地面”时，才停止一次
         else if (!currentGrounded && lastGrounded)
         {
             ps.Stop(true);
-            Debug.Log("停止粒子");
+
         }
         if (player.horizontalInput==1)
         {
-            //旋转x轴为90度
-            
-            Debug.Log("旋转x轴为90度");
+
         }
         else if (player.horizontalInput == -1)
         {
-            //旋转x轴为-90度
-            
-            Debug.Log("旋转x轴为-90度");
+
         }
         // 更新状态
         lastGrounded = currentGrounded;
