@@ -45,13 +45,17 @@ public class Air : MonoBehaviour
         if (_isAir)
         {
             //如果物体有Rigidbody2D
-            if (other.GetComponent<Rigidbody2D>() != null)
+            if (other.tag != "Chase")
+            {
+                if (other.GetComponent<Rigidbody2D>() != null)
             {
                 Rigidbody2D itemRb = other.GetComponent<Rigidbody2D>();
                 itemRb.velocity = new Vector2(itemRb.velocity.x, pushForce);
                 Debug.Log(other.gameObject.name);
                 Debug.Log(itemRb.velocity);
             }
+            }
+            
         }
 
     }
