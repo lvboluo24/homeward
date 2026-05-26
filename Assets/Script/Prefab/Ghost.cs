@@ -12,12 +12,16 @@ public class Ghost : MonoBehaviour
     private Player player;
     public Scope scope;
     private Rigidbody2D rb;
+    //当前位置
+    private Vector2 currentPosition;
+    public bool _isReset;
 
     void Start()
     {
         game = GameObject.Find("GameManager").GetComponent<Game>();
         player = GameObject.Find("Player").GetComponent<Player>();
         rb = GetComponent<Rigidbody2D>();
+        currentPosition = transform.position;
     }
 
 
@@ -50,5 +54,22 @@ public class Ghost : MonoBehaviour
             gameObject.SetActive(false);
             other.gameObject.SetActive(false);
         }
+        //如果接触玩家
+        if (other.collider.CompareTag("Player"))
+        {
+            StartCoroutine(ResetPosition());
+        }
+    }
+    private IEnumerator ResetPosition()
+    {
+        if (!_isReset)
+        {
+            _isReset = true;
+            yield return new WaitForSeconds(1f);
+            Debug.Log("重置位置");
+            transform.position = currentPosition;
+            _isReset = false;
+        }
+
     }
 }
