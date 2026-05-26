@@ -63,6 +63,10 @@ public class Box : MonoBehaviour
         {
             //计算x方向移动方向
             Vector2 moveDirection = (PathNodes[index] - transform.position).normalized;
+            if (Vector3.Distance(transform.position, PathNodes[index]) < 0.1f)
+            {
+                moveDirection.x = 0;
+            }
             //设置速度
             rb.velocity = new Vector2(moveDirection.x * speed, rb.velocity.y);
 
