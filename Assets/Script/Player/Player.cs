@@ -165,6 +165,7 @@ public PlayerAnim playerAnim;
         {
             _isLadder = false;
             Debug.Log("不在梯子上");
+            rb.velocity = new Vector2(rb.velocity.x, jump/4*3);
         }
     }
 
