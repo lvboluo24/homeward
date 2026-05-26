@@ -42,4 +42,13 @@ public class Ghost : MonoBehaviour
         }
 
     }
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        //如果接触尖刺
+        if (other.collider.CompareTag("Spike"))
+        {
+            gameObject.SetActive(false);
+            other.gameObject.SetActive(false);
+        }
+    }
 }
