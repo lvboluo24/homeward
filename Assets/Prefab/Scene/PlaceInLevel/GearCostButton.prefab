@@ -54,6 +54,9 @@ MonoBehaviour:
   door: {fileID: 0}
   air: {fileID: 0}
   looping: {fileID: 0}
+  spRenderer: {fileID: 2081990741741772227}
+  collider1: {fileID: 7503431447984317435}
+  display: 0
 --- !u!58 &2114467400382567158
 CircleCollider2D:
   m_ObjectHideFlags: 0
