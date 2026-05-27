@@ -21,6 +21,8 @@ public class Looping : MonoBehaviour
 
         [Tooltip("平台预制体父节点")]
     public GameObject platformPrefabParent;
+    [Tooltip("平台显示，0，两世界显示，1，和平显示，2，战争显示")]
+    public int display;
 
 
 
@@ -48,6 +50,7 @@ public class Looping : MonoBehaviour
                 GameObject platformObj = Instantiate(platformPrefab, platformStart.transform.position, platformStart.transform.transform.rotation, platformPrefabParent.transform);
                 LoopPlatform platform1 = platformObj.GetComponent<LoopPlatform>();
                 platform1.platformSpeed = platformSpeed;
+                platform1.display = display;
                 platform1.PathNodes.Add(platformStart);
                 platform1.PathNodes.Add(platformEnd);
                 platform1.index = 1;
@@ -62,6 +65,7 @@ public class Looping : MonoBehaviour
                 GameObject platformObj = Instantiate(platformPrefab, platformEnd.transform.position, platformEnd.transform.transform.rotation, platformPrefabParent.transform);
                 LoopPlatform platform2 = platformObj.GetComponent<LoopPlatform>();
                 platform2.platformSpeed = platformSpeed;
+                platform2.display = display;
                 platform2.PathNodes.Add(platformStart);
                 platform2.PathNodes.Add(platformEnd);
                 platform2.index = 0;

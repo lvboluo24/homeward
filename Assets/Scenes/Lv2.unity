@@ -2059,6 +2059,10 @@ PrefabInstance:
       value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 4267974401188784906, guid: d6750170a27e87e4390c1fb75538b4fc, type: 3}
+      propertyPath: display
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4267974401188784906, guid: d6750170a27e87e4390c1fb75538b4fc, type: 3}
       propertyPath: generateTime
       value: 2
       objectReference: {fileID: 0}
@@ -5021,7 +5025,7 @@ GameObject:
   - component: {fileID: 534878563}
   m_Layer: 0
   m_Name: HiddenPath
-  m_TagString: Ladder
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59689,11 +59693,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 718799144901677972, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 40.67
+      value: 43.15
       objectReference: {fileID: 0}
     - target: {fileID: 718799144901677972, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.03
+      value: 13.48
       objectReference: {fileID: 0}
     - target: {fileID: 718799144901677972, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
       propertyPath: m_LocalPosition.z

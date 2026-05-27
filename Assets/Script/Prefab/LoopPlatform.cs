@@ -13,8 +13,17 @@ public class LoopPlatform : MonoBehaviour
     public int index = 0;
         [Tooltip("启动")]
     public bool _isStart;
+        [Tooltip("平台显示，0，两世界显示，1，和平显示，2，战争显示")]
+    public int display;
     //sp图像
     public SpriteRenderer spRenderer;
+    //碰撞体
+    public Collider2D collider1;
+    Game game;
+    void Awake()
+    {
+        game = GameObject.Find("GameManager").GetComponent<Game>();
+    }
     void Start()
     {
 
@@ -36,7 +45,35 @@ public class LoopPlatform : MonoBehaviour
             Destroy(gameObject);
 
         }
+        if (display == 1)
+        {
+            //如果为和平世界
+            if (game.worldType == 0)
+            {
+                spRenderer.enabled = true;
+                collider1.enabled = true;
+            }
+            else if (game.worldType == 1)
+            {
+                spRenderer.enabled = false;
+                collider1.enabled = false;
+            }
 
+        }
+        else if (display == 2)
+        {
+            //如果为战争世界
+            if (game.worldType == 0)
+            {
+                spRenderer.enabled = false;
+                collider1.enabled = false;
+            }
+            else if (game.worldType == 1)
+            {
+                spRenderer.enabled = true;
+                collider1.enabled = true;
+            }
+        }
     }
     //进入
     private void OnTriggerEnter2D(Collider2D other)
