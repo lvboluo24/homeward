@@ -51,9 +51,7 @@ MonoBehaviour:
   PathNodes: []
   index: 0
   _isStart: 0
-  display: 0
   spRenderer: {fileID: 1584625589375730795}
-  collider1: {fileID: 3544939282783024131}
 --- !u!212 &1584625589375730795
 SpriteRenderer:
   m_ObjectHideFlags: 0
