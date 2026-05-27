@@ -20,10 +20,11 @@ public class GearButton : MonoBehaviour
     public Air air;
     [Tooltip("控制的循环平台")]
     public Looping looping;
-            [Tooltip("平台显示，0，两世界显示，1，和平显示，2，战争显示")]
+    
     public SpriteRenderer spRenderer;
     //碰撞体
     public Collider2D collider1;
+    [Tooltip("平台显示，0，两世界显示，1，和平显示，2，战争显示")]
     public int display;
 
     private Game game;
