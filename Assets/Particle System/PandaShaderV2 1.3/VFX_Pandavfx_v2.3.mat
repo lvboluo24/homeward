@@ -12,14 +12,13 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
-  - _DISSOLVETEXUVS_NORMAL
   - _FACE_Y
   - _MAINTEXUVS_NORMAL
-  - _MASKTEXUVS_NORMAL
   m_InvalidKeywords:
   - _CADDTEXUVT_ON
   - _DISSOLVEAR_ON
   - _DISSOLVEPLUSAR_ON
+  - _DISSOLVETEXUVS_NORMAL
   - _DISTORTADDTEX_ON
   - _DISTORTMASKTEXAR_ON
   - _DISTORTTEXAR_ON
@@ -27,6 +26,7 @@ Material:
   - _IFDISSOLVECOLOR_ON
   - _MASKALPHARA_ON
   - _MASKPLUSAR_ON
+  - _MASKTEXUVS_NORMAL
   - _VTOAR_ON
   - _VTOMASKAR_ON
   m_LightmapFlags: 4
@@ -111,8 +111,13 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _texcoord4:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _AddTexAC: 0
     - _AddTexAR: 0
     - _AddTexBlend: 0
     - _AddTexBlendMode: 0
@@ -161,6 +166,7 @@ Material:
     - _DissolveTexDivide: 1
     - _DissolveTexExp: 1
     - _DissolveTexUVS: 0
+    - _DissolveTexUVS2: 0
     - _DistortAddTex: 1
     - _DistortDisTex: 0
     - _DistortFactor: 0
@@ -203,6 +209,7 @@ Material:
     - _MainOffsetUC2: 0
     - _MainOffsetVC1: 0
     - _MainOffsetVC2: 1
+    - _MainTexAC: 0
     - _MainTexUVS: 0
     - _MainTex_Uspeed: 0
     - _MainTex_Vspeed: 0
