@@ -11,10 +11,25 @@ public class Save : MonoBehaviour
     public int sound_bgm_size;
     [Tooltip("保存次数")]
     public int save_index;
+[Tooltip("当前关卡")]
+public int level;
+
+
     void Start()
     {
-        save();
-        load();
+        //检查存档文件是否存在
+        string savePath = Path.Combine(Application.persistentDataPath, "save.json");
+        if (!File.Exists(savePath))
+        {
+            Debug.Log("未找到存档文件：save.json，将使用默认设置");
+            save();
+        }
+        else
+        {
+            Debug.Log("找到存档文件：save.json，将加载存档");
+            load();
+        }
+
     }
 
     // Update is called once per frame
@@ -23,14 +38,14 @@ public class Save : MonoBehaviour
 
     }
 
-public void save()
+    public void save()
     {
         game_data data = ScriptableObject.CreateInstance<game_data>();
         data.music_bgm_size = music_bgm_size;
         data.sound_bgm_size = sound_bgm_size;
         string json = JsonUtility.ToJson(data);
         System.IO.File.WriteAllText(Application.persistentDataPath + "/save.json", json);
-        
+
     }
 
     public void load()
@@ -38,8 +53,8 @@ public void save()
         string json = System.IO.File.ReadAllText(Application.persistentDataPath + "/save.json");
         game_data data = ScriptableObject.CreateInstance<game_data>();
         JsonUtility.FromJsonOverwrite(json, data);
-       music_bgm_size = data.music_bgm_size;
-       sound_bgm_size = data.sound_bgm_size;
+        music_bgm_size = data.music_bgm_size;
+        sound_bgm_size = data.sound_bgm_size;
     }
 
 }
