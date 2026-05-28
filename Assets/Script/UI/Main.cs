@@ -14,7 +14,7 @@ public class Main : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-//点击时，打印点击的物体名字
+        //点击时，打印点击的物体名字
         if (Input.GetMouseButtonDown(0))
         {
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
