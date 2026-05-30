@@ -103,8 +103,10 @@ public PlayerAnim playerAnim;
     public void HandleMovement()
     {
         //左右上下移动控制
-        horizontalInput = Input.GetAxisRaw("Horizontal");
+
+             horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
+        
         //空格跳跃控制
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -144,6 +146,10 @@ public PlayerAnim playerAnim;
         {
             rb.velocity = new Vector2(rb.velocity.x, verticalInput * climbSpeed);
 
+        }
+        if (_isDead)
+        {
+            rb.velocity = new Vector2(0, 0);
         }
 
 
