@@ -33,10 +33,9 @@ void Awake()
     // Update is called once per frame
     void Update()
     {
-        if (audioSource.isPlaying)
-        {
-            
-        }
+//调整音量
+        audioSource.volume = volume * volumeList[index]/10000;
+
     }
     //播放音乐
     public void PlayMusic()
