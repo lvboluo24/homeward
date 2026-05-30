@@ -52,6 +52,7 @@ private Transform _currentPlatform;
 
 public PlayerAnim playerAnim;
     public Rigidbody2D rb;
+    public Sound sound;
     private Game game;
 
 

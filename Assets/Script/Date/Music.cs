@@ -12,8 +12,8 @@ public class Music : MonoBehaviour
     public List<AudioClip> musicList;
     [Tooltip("单独音量列表")]
     public List<float> volumeList;
-[Tooltip("当前播放音乐索引")]
-public int index;
+    [Tooltip("当前播放音乐索引")]
+    public int index;
 
     
 Save save;
@@ -49,7 +49,7 @@ void Awake()
         {
             index = 2;
         }
-audioSource.clip = musicList[index];
+        audioSource.clip = musicList[index];
         audioSource.Play();
         
         
