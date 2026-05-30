@@ -19,6 +19,8 @@ public class Set : MonoBehaviour
     public List<Sound> sound = new List<Sound>();
 
     public Game game;
+
+    public Sound uiSound;
     void Awake()
     {
         closeall();
@@ -44,12 +46,12 @@ public class Set : MonoBehaviour
             if (node[0].activeSelf)
             {
                 closeall();
-                Debug.Log("打开设置菜单");
+                uiSound.PlaySound(3);
             }
             else
             {
                 node[0].SetActive(true);
-                Debug.Log("打开设置菜单");
+uiSound.PlaySound(3);
             }
         }
     }
@@ -65,10 +67,12 @@ public class Set : MonoBehaviour
     public void open(int index)
     {
         node[index].SetActive(true);
+        uiSound.PlaySound(0);
     }
     //点击设置菜单
     public void close(int index)
     {
+              uiSound.PlaySound(0);
         node[index].SetActive(false);
     }
     //调整音乐大小
@@ -87,6 +91,7 @@ public class Set : MonoBehaviour
     //重玩游戏
     public void restart()
     {
+        uiSound.PlaySound(0);
         if (game.level == 1)
             {
                 SceneManager.LoadScene("Lv1");
@@ -103,6 +108,7 @@ public class Set : MonoBehaviour
     //返回主菜单
     public void back()
     {
+        uiSound.PlaySound(0);
         SceneManager.LoadScene("main");
     }
 

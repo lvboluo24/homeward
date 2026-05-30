@@ -22,7 +22,7 @@ public class Sound : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+                audioSource.volume = volume * volumeList[index]/10000;
     }
      //播放音效，循环
      public void PlaySoundLoop(int ix)
