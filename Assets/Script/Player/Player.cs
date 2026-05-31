@@ -128,6 +128,7 @@ public PlayerAnim playerAnim;
             {
                 _isJump = true;
                 sound.PlaySound(1,7);
+                
             }
         }
 
@@ -189,7 +190,7 @@ public PlayerAnim playerAnim;
         if (other.CompareTag("Ladder"))
         {
             _isLadder = true;
-            Debug.Log("在梯子上");
+          
         }
     }
 
@@ -198,7 +199,7 @@ public PlayerAnim playerAnim;
         if (other.CompareTag("Ladder"))
         {
             _isLadder = false;
-            Debug.Log("不在梯子上");
+    
             rb.velocity = new Vector2(rb.velocity.x, jump/4*3);
         }
     }

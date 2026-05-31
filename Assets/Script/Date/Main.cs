@@ -48,7 +48,6 @@ public class Main : MonoBehaviour
     public void Exit()
     {
         Application.Quit();
-        //编辑器也退出
-        UnityEditor.EditorApplication.isPlaying = false;
+    
     }
 }

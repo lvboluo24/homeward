@@ -35883,6 +35883,50 @@ PrefabInstance:
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 1002987427}
+    - target: {fileID: 6222419286419839677, guid: 4dd2a8a30a3dc6c419447c69a60bde29, type: 3}
+      propertyPath: soundType.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222419286419839677, guid: 4dd2a8a30a3dc6c419447c69a60bde29, type: 3}
+      propertyPath: soundType.Array.data[1]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222419286419839677, guid: 4dd2a8a30a3dc6c419447c69a60bde29, type: 3}
+      propertyPath: soundType.Array.data[2]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222419286419839677, guid: 4dd2a8a30a3dc6c419447c69a60bde29, type: 3}
+      propertyPath: soundType.Array.data[3]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222419286419839677, guid: 4dd2a8a30a3dc6c419447c69a60bde29, type: 3}
+      propertyPath: soundType.Array.data[4]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222419286419839677, guid: 4dd2a8a30a3dc6c419447c69a60bde29, type: 3}
+      propertyPath: volumeList.Array.data[0]
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222419286419839677, guid: 4dd2a8a30a3dc6c419447c69a60bde29, type: 3}
+      propertyPath: volumeList.Array.data[1]
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222419286419839677, guid: 4dd2a8a30a3dc6c419447c69a60bde29, type: 3}
+      propertyPath: volumeList.Array.data[2]
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222419286419839677, guid: 4dd2a8a30a3dc6c419447c69a60bde29, type: 3}
+      propertyPath: volumeList.Array.data[3]
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222419286419839677, guid: 4dd2a8a30a3dc6c419447c69a60bde29, type: 3}
+      propertyPath: volumeList.Array.data[4]
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222419286419839677, guid: 4dd2a8a30a3dc6c419447c69a60bde29, type: 3}
+      propertyPath: volumeList.Array.data[5]
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 7686277338554597309, guid: 4dd2a8a30a3dc6c419447c69a60bde29, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -59908,6 +59952,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3323584311092393554, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
       propertyPath: explosionRadius
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7237838778842940245, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
+      propertyPath: soundType.Array.data[1]
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8259676102185292296, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}

@@ -8674,6 +8674,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 111253887125971755}
     - target: {fileID: 4884620976807173494, guid: 92fb2f81f87aa9543886a9f4278f12e9, type: 3}
+      propertyPath: uiSound
+      value: 
+      objectReference: {fileID: 6222419286419839677}
+    - target: {fileID: 4884620976807173494, guid: 92fb2f81f87aa9543886a9f4278f12e9, type: 3}
       propertyPath: musicSlider
       value: 
       objectReference: {fileID: 5179393951000621573}
@@ -8841,6 +8845,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac31ce5503d256e458efc34cc0aa7be6, type: 3}
+--- !u!114 &6222419286419839677 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1093824843649367628, guid: ac31ce5503d256e458efc34cc0aa7be6, type: 3}
+  m_PrefabInstance: {fileID: 6445903109573027057}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2b849d22ad38c34c85f3b3ef4ee4564, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &7326978911177709436 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4385057731190010765, guid: ac31ce5503d256e458efc34cc0aa7be6, type: 3}

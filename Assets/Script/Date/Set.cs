@@ -51,7 +51,7 @@ public class Set : MonoBehaviour
             else
             {
                 node[0].SetActive(true);
-uiSound.PlaySound(0,3);
+           uiSound.PlaySound(0,3);
             }
         }
     }

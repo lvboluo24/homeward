@@ -103,7 +103,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -134,8 +134,8 @@ LineRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.10095215
-        value: 0.06667709
+        time: 0.18312836
+        value: 0.413723
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -457,7 +457,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: -16391838, guid: e97077701d719c043a547bddfa1450af, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -671,6 +671,10 @@ PrefabInstance:
       propertyPath: soundList.Array.data[8]
       value: 
       objectReference: {fileID: 8300000, guid: 0a4793ab04c23724fbc34c072f7b1258, type: 3}
+    - target: {fileID: 1093824843649367628, guid: ac31ce5503d256e458efc34cc0aa7be6, type: 3}
+      propertyPath: soundType.Array.data[1]
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1093824843649367628, guid: ac31ce5503d256e458efc34cc0aa7be6, type: 3}
       propertyPath: volumeList.Array.data[0]
       value: 100

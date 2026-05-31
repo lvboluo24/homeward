@@ -66,6 +66,7 @@ public class Sound : MonoBehaviour
       audioSource[soundIndex].loop = false;
       audioSource[soundIndex].clip = soundList[index];
       audioSource[soundIndex].Play();
+      Debug.Log("播放音效" + index);
 
    }
    //暂停音效

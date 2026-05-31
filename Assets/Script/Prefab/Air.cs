@@ -14,24 +14,58 @@ public class Air : MonoBehaviour
     public int demandnumber;
     [Tooltip("喷气当前激活数量")]
     public int number;
+    [Tooltip("类型,0,按钮激活，1，和平激活，2，战争激活")]
+    public int type;
 
+    Game game;
+
+    private void Awake()
+    {
+        game = FindObjectOfType<Game>();
+    }
 
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (number >= demandnumber)
+        if (type == 0)
         {
-            _isAir = true;
+            if (number >= demandnumber)
+            {
+                _isAir = true;
+            }
+            else
+            {
+                _isAir = false;
+            }
         }
-        else
+        else if (type == 1)
         {
-            _isAir = false;
+            if (game.worldType == 0)
+            {
+                _isAir = false;
+            }
+            else
+            {
+                _isAir = true;
+            }
         }
+        else if (type == 2)
+        {
+            if (game.worldType == 1)
+            {
+                _isAir = false;
+            }
+            else
+            {
+                _isAir = true;
+            }
+        }
+
     }
     // 当物体进入触发器
     private void OnTriggerEnter2D(Collider2D other)
@@ -48,14 +82,14 @@ public class Air : MonoBehaviour
             if (other.tag != "Chase")
             {
                 if (other.GetComponent<Rigidbody2D>() != null)
-            {
-                Rigidbody2D itemRb = other.GetComponent<Rigidbody2D>();
-                itemRb.velocity = new Vector2(itemRb.velocity.x, pushForce);
-                Debug.Log(other.gameObject.name);
-                Debug.Log(itemRb.velocity);
+                {
+                    Rigidbody2D itemRb = other.GetComponent<Rigidbody2D>();
+                    itemRb.velocity = new Vector2(itemRb.velocity.x, pushForce);
+                    Debug.Log(other.gameObject.name);
+                    Debug.Log(itemRb.velocity);
+                }
             }
-            }
-            
+
         }
 
     }
