@@ -6,9 +6,11 @@ using UnityEngine.SceneManagement;
 public class End : MonoBehaviour
 {
     public int Level;
+    Transition transition;
+    public bool _isEnd;
     void Start()
     {
-
+        transition = FindObjectOfType<Transition>();
     }
 
     // Update is called once per frame
@@ -28,9 +30,12 @@ public class End : MonoBehaviour
             {
                 SceneManager.LoadScene("Lv3");
             }
-            else if (Level == 4)
+            else if (Level == 4&&!_isEnd)
             {
-                Debug.Log("游戏结束");
+                _isEnd = true;
+                
+                transition.playlevelend(4);
+                Debug.Log("Lv4");
             }
         }
 

@@ -31495,6 +31495,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3326796309941092702, guid: 02db2763644969b44b7131dd9919825b, type: 3}
   m_PrefabInstance: {fileID: 330663905}
   m_PrefabAsset: {fileID: 0}
+--- !u!20 &365293271 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 2193378663765041374, guid: f8251ddcd86ec334ebc2ad3d81ad0887, type: 3}
+  m_PrefabInstance: {fileID: 1619162258}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &366783267
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47570,7 +47575,7 @@ PrefabInstance:
     - target: {fileID: 3584952449546947920, guid: 4dd2a8a30a3dc6c419447c69a60bde29, type: 3}
       propertyPath: m_Camera
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 365293271}
     - target: {fileID: 5871388435619347106, guid: 4dd2a8a30a3dc6c419447c69a60bde29, type: 3}
       propertyPath: audioSource
       value: 
@@ -49300,15 +49305,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1660454452807680991, guid: 77ba3efc342d78241b33e1a29418e33a, type: 3}
       propertyPath: gear.Array.data[0]
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1660454452807680991, guid: 77ba3efc342d78241b33e1a29418e33a, type: 3}
       propertyPath: gear.Array.data[1]
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1660454452807680991, guid: 77ba3efc342d78241b33e1a29418e33a, type: 3}
       propertyPath: gear.Array.data[2]
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1660454452807680991, guid: 77ba3efc342d78241b33e1a29418e33a, type: 3}
       propertyPath: gear.Array.data[3]

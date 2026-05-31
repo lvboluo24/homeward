@@ -23,7 +23,7 @@ public class Scope : MonoBehaviour
 if (other.CompareTag("Player"))
         {
             _isPlayer = true;
-            Debug.Log("玩家进入范围");
+
         }
     }
     private void OnTriggerExit2D(Collider2D other)
@@ -31,7 +31,7 @@ if (other.CompareTag("Player"))
         if (other.CompareTag("Player"))
         {
             _isPlayer = false;
-            Debug.Log("玩家离开范围");
+
         }
     }
     private void OnTriggerStay2D(Collider2D other)
