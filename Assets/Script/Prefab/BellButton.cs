@@ -8,10 +8,12 @@ public class BellButton : MonoBehaviour
     [Tooltip("玩家在互动范围内")]
     public bool _isPlayer;
     private Game game;
+    public Pendulum pendulum;
     void Awake()
     {
 
-        game = GameObject.Find("GameManager").GetComponent<Game>();
+        game = FindObjectOfType<Game>();
+        pendulum = FindObjectOfType<Pendulum>();
 
     }
     void Start()
@@ -22,7 +24,7 @@ public class BellButton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //按键1
+        //按键5
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             if (_isPlayer && game.gear[3] >= 1)
@@ -31,6 +33,7 @@ public class BellButton : MonoBehaviour
                 game.gear[3]--;
                 game.StartCoroutine(game.Clock());
                 Debug.Log("钟摆状态为1");
+                pendulum.isSwing = true;
             }
         }
     }

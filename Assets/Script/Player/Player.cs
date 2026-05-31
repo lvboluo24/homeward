@@ -63,9 +63,14 @@ public PlayerAnim playerAnim;
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        game = GameObject.Find("GameManager").GetComponent<Game>();
+        game = FindObjectOfType<Game>();
         //获取玩家缩放比例
         scaleScale = transform.localScale.x;
+        //第四关玩家跳跃增加
+        if (game.level == 3)
+        {
+            jump = 10f;
+        }
     }
 
 
