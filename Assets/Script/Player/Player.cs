@@ -106,6 +106,10 @@ public PlayerAnim playerAnim;
 
              horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
+        if (horizontalInput != 0)
+        {
+            sound.PlaySound(1);
+        }
         
         //空格跳跃控制
         if (Input.GetKeyDown(KeyCode.Space))

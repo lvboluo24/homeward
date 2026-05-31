@@ -398,6 +398,7 @@ MonoBehaviour:
   currentState: 0
   playerAnim: {fileID: 5541227166634158491}
   rb: {fileID: 5212562709181035875}
+  sound: {fileID: 7237838778842940245}
 --- !u!114 &5541227166634158491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -760,3 +761,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4385057731190010765, guid: ac31ce5503d256e458efc34cc0aa7be6, type: 3}
   m_PrefabInstance: {fileID: 7737170845126933785}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7237838778842940245 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1093824843649367628, guid: ac31ce5503d256e458efc34cc0aa7be6, type: 3}
+  m_PrefabInstance: {fileID: 7737170845126933785}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2b849d22ad38c34c85f3b3ef4ee4564, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
