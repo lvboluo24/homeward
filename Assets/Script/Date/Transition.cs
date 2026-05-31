@@ -26,10 +26,12 @@ public class Transition : MonoBehaviour
     public bool isTyping;
     [Tooltip("文本组件")]
     public TextMeshProUGUI tmpText;
+    Game game;
 
     void Awake()
     {
-        if (_istransition)
+        game = FindObjectOfType<Game>();
+        if (game.level==0)
         {
             node[1].SetActive(true);
         }

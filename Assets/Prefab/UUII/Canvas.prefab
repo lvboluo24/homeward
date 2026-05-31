@@ -369,7 +369,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 9092483565967976284}
         m_TargetAssemblyTypeName: Main, Assembly-CSharp
         m_MethodName: Skip
         m_Mode: 3
@@ -1288,7 +1288,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 9092483565967976284}
         m_TargetAssemblyTypeName: Main, Assembly-CSharp
         m_MethodName: Exit
         m_Mode: 1
@@ -1690,7 +1690,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 9092483565967976284}
         m_TargetAssemblyTypeName: Main, Assembly-CSharp
         m_MethodName: Exit
         m_Mode: 1
@@ -1898,7 +1898,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 9092483565967976284}
         m_TargetAssemblyTypeName: Main, Assembly-CSharp
         m_MethodName: Skip
         m_Mode: 3
@@ -2106,7 +2106,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 9092483565967976284}
         m_TargetAssemblyTypeName: Main, Assembly-CSharp
         m_MethodName: Skip
         m_Mode: 3
@@ -2799,6 +2799,41 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &3489554523273914145
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3397635521403522725}
+  m_Layer: 5
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &3397635521403522725
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3489554523273914145}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1526559708523844765}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &3490726606294529382
 GameObject:
   m_ObjectHideFlags: 0
@@ -6660,7 +6695,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7299459390156716616}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: df76b11c727232d41a11355b22ab97c9, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 9d4427fd276e8494481cde06f07e00d1, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -7050,6 +7085,7 @@ RectTransform:
   - {fileID: 3170151612189467596}
   - {fileID: 7326978911177709436}
   - {fileID: 983098977427030713}
+  - {fileID: 3397635521403522725}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -7846,7 +7882,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 9092483565967976284}
         m_TargetAssemblyTypeName: Main, Assembly-CSharp
         m_MethodName: Skip
         m_Mode: 3
@@ -8302,7 +8338,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 9092483565967976284}
         m_TargetAssemblyTypeName: Main, Assembly-CSharp
         m_MethodName: Skip
         m_Mode: 3
@@ -8709,6 +8745,10 @@ PrefabInstance:
       propertyPath: node.Array.data[5]
       value: 
       objectReference: {fileID: 4576562184675428489}
+    - target: {fileID: 5422402496869620669, guid: 92fb2f81f87aa9543886a9f4278f12e9, type: 3}
+      propertyPath: node
+      value: 
+      objectReference: {fileID: 461663143362593481}
     - target: {fileID: 8053866956467114640, guid: 92fb2f81f87aa9543886a9f4278f12e9, type: 3}
       propertyPath: m_Name
       value: DataManager
@@ -8745,7 +8785,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   videoPlayer: {fileID: 3622308950166865590}
   videoEndnode: {fileID: 7299459390156716616}
-  time: 2
+  time: 65
   _isPlayVideo: 0
   Image: {fileID: 3466443149779899636}
   hideTime: 2
@@ -8758,6 +8798,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 524af4da2219c504183928fcc117ba94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &9092483565967976284 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5422402496869620669, guid: 92fb2f81f87aa9543886a9f4278f12e9, type: 3}
+  m_PrefabInstance: {fileID: 3850230194598313185}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6533551688806657649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6f794b3644bcb441883affda2a38b4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &6445903109573027057

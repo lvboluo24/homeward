@@ -20,11 +20,13 @@ public class Video : MonoBehaviour
 [Tooltip("隐藏时间")]
 public float hideTime;
 Game game;  
+Music music;
 
 
     void Awake()
     {
         game = FindObjectOfType<Game>();
+        music = FindObjectOfType<Music>();
         if (game.level == 1)
         {
             PlayVideo();
@@ -91,6 +93,7 @@ Game game;
         // 可选：完全消失后隐藏物体
         Image.enabled = true;
         videoEndnode.SetActive(false);
+        music.PlayMusic();
     }
 
 }

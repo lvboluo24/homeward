@@ -29,7 +29,11 @@ void Awake()
     }
    void Start()
     {
-        PlayMusic();
+        if (game.level!=1)
+        {
+            PlayMusic();
+        }
+        
     }
 
     // Update is called once per frame

@@ -5,10 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class Main : MonoBehaviour
 {
-    // Start is called before the first frame update
+    Game game;
+    public GameObject node;
     void Start()
     {
-
+        game = FindObjectOfType<Game>();
+        if (game.level==0)
+        {
+            node.SetActive(true);
+        }
+        else
+        {
+            node.SetActive(false);
+        }
     }
 
     // Update is called once per frame
