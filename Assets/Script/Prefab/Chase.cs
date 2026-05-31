@@ -41,7 +41,7 @@ void Awake()
         }
         else
         {
-            rb.velocity = new Vector2(0, rb.velocity.y);
+            rb.velocity = new Vector2(0, 0);
         }
     }
     private void OnCollisionEnter2D(Collision2D other)

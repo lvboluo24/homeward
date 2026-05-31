@@ -9,9 +9,11 @@ public class TouchButton : MonoBehaviour
     [Tooltip("激活状态")]
     public bool _isActivate;
     [Tooltip("0,永久激活，1，按住激活，不按不激活")]
+
+
     public int type;
 
-        [Tooltip("控制的门")]
+    [Tooltip("控制的门")]
     public Door door;
     [Tooltip("控制的喷气")]
     public Air air;
@@ -31,56 +33,60 @@ public class TouchButton : MonoBehaviour
         if (other.tag != "Scope")
         {
             if (type == 0)
-        {
-            _isActivate = true;
-            if (door != null)
             {
-                //打开门
-                door.number++;
+                if (!_isActivate)
+                {
+                    if (door != null)
+                {
+                    //打开门
+                    door.number++;
+                }
+                if (air != null)
+                {
+                    //打开喷气
+                    air.number++;
+                }
+                }
+                
+                _isActivate = true;
             }
-            if (air != null)
+            if (type == 1)
             {
-                //打开喷气
-                air.number++;
+                _isTouch = true;
+                if (door != null)
+                {
+                    //打开门
+                    door.number++;
+                }
+                if (air != null)
+                {
+                    //打开喷气
+                    air.number++;
+                }
             }
         }
-        if (type == 1)
-        {
-            _isTouch = true;
-            if (door != null)
-            {
-                //打开门
-                door.number++;
-            }
-            if (air != null)
-            {
-                //打开喷气
-                air.number++;
-            }
-        }
-        }
-        
+
     }
     private void OnTriggerExit2D(Collider2D other)
     {
-         if (other.tag != "Scope")
+        if (other.tag != "Scope")
         {
-             if (type == 1)
-        {
-            _isTouch = false;
-            if (door != null)
+            if (type == 1)
             {
-                //关闭门
-                door.number--;
-            }
-            if (air != null)
-            {
-                //关闭喷气
-                air.number--;
+                _isTouch = false;
+                if (door != null)
+                {
+                    //关闭门
+                    door.number--;
+                }
+                if (air != null)
+                {
+                    //关闭喷气
+                    air.number--;
+                }
             }
         }
-        }
-       
+
     }
-    
+
 }
