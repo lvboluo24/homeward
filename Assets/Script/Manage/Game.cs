@@ -31,10 +31,15 @@ public class Game : MonoBehaviour
     private Grid grid;
     void Awake()
     {
-        player = GameObject.FindWithTag("Player").GetComponent<Player>();
-        mainCamera = GameObject.Find("Main Camera").GetComponent<MainCamera>();
-        grid = GameObject.Find("GridManager").GetComponent<Grid>();
-        boxes = new List<Box>(Object.FindObjectsOfType<Box>());
+        if (level!=0)
+        {
+             player = FindObjectOfType<Player>();
+        mainCamera = FindObjectOfType<MainCamera>();
+        grid = FindObjectOfType<Grid>();
+                boxes = new List<Box>(Object.FindObjectsOfType<Box>());
+        }
+       
+
 
     }
     void Start()
@@ -54,7 +59,9 @@ public class Game : MonoBehaviour
     //检测玩家位置
     public void CheckPlayerPosition()
     {
-        if (level == 1)
+        if (level!=0)
+        {
+            if (level == 1)
         {
             //x为玩家x位置除以17.77777f的整数
             x = (int)((player.transform.position.x + 8.88888f) / 17.77777f);
@@ -73,6 +80,8 @@ public class Game : MonoBehaviour
         }
         mainCamera.x = x;
         mainCamera.y = y;
+        }
+        
     }
     //检查世界类型
     public void CheckWorldType()

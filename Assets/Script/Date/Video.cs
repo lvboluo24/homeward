@@ -19,11 +19,13 @@ public class Video : MonoBehaviour
     public Image Image;
 [Tooltip("隐藏时间")]
 public float hideTime;
+Game game;  
 
 
     void Awake()
     {
-        if (_isPlayVideo)
+        game = FindObjectOfType<Game>();
+        if (game.level == 1)
         {
             PlayVideo();
         }

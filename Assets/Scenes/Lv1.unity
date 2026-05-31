@@ -83241,6 +83241,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 7967720126136357154, guid: 4dd2a8a30a3dc6c419447c69a60bde29, type: 3}
+      propertyPath: time
+      value: 65
+      objectReference: {fileID: 0}
     - target: {fileID: 8549920135752753559, guid: 4dd2a8a30a3dc6c419447c69a60bde29, type: 3}
       propertyPath: uiSound
       value: 

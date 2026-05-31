@@ -30,7 +30,7 @@ public class End : MonoBehaviour
             }
             else if (Level == 4)
             {
-                SceneManager.LoadScene("Lv4");
+                Debug.Log("游戏结束");
             }
         }
 
