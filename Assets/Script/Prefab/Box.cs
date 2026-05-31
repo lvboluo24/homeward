@@ -110,7 +110,11 @@ public class Box : MonoBehaviour
     }
     public void UpdateWorld()
     {
-        Round();
+        if (type!=0)
+        {
+              Round();
+        }
+      
     }
     public void Round()
     {

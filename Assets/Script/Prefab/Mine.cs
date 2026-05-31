@@ -45,6 +45,10 @@ public class Mine : MonoBehaviour
 //根据相对方向，产生相对的速度
                 rd.velocity = new Vector2(relativePosition.x * boomSpeed, rd.velocity.y);
             }
+            if (other.CompareTag("Sniper"))
+            {
+                Destroy(other.gameObject);
+            }
         }
         
     }
