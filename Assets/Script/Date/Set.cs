@@ -46,12 +46,12 @@ public class Set : MonoBehaviour
             if (node[0].activeSelf)
             {
                 closeall();
-                uiSound.PlaySound(3);
+                uiSound.PlaySound(0,3);
             }
             else
             {
                 node[0].SetActive(true);
-uiSound.PlaySound(3);
+uiSound.PlaySound(0,3);
             }
         }
     }
@@ -67,12 +67,12 @@ uiSound.PlaySound(3);
     public void open(int index)
     {
         node[index].SetActive(true);
-        uiSound.PlaySound(0);
+        uiSound.PlaySound(0,0);
     }
     //点击设置菜单
     public void close(int index)
     {
-              uiSound.PlaySound(0);
+              uiSound.PlaySound(0,0);
         node[index].SetActive(false);
     }
     //调整音乐大小
@@ -91,7 +91,7 @@ uiSound.PlaySound(3);
     //重玩游戏
     public void restart()
     {
-        uiSound.PlaySound(0);
+        uiSound.PlaySound(0,0);
         if (game.level == 1)
             {
                 SceneManager.LoadScene("Lv1");
@@ -108,7 +108,7 @@ uiSound.PlaySound(3);
     //返回主菜单
     public void back()
     {
-        uiSound.PlaySound(0);
+        uiSound.PlaySound(0,0);
         SceneManager.LoadScene("main");
     }
 

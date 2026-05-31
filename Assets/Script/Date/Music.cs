@@ -14,6 +14,8 @@ public class Music : MonoBehaviour
     public List<float> volumeList;
     [Tooltip("当前播放音乐索引")]
     public int index;
+    [Tooltip("是否播放音乐")]
+    public bool isPlay = true;
 
     
 Save save;

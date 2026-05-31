@@ -106,9 +106,14 @@ public PlayerAnim playerAnim;
 
              horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
+        //左右移动音效
         if (horizontalInput != 0)
         {
-            sound.PlaySound(1);
+            sound.PlaySoundLoop(0,6);
+        }
+        else
+        {
+            sound.StopSound(0);
         }
         
         //空格跳跃控制
@@ -117,6 +122,7 @@ public PlayerAnim playerAnim;
             if (_isGrounded)
             {
                 _isJump = true;
+                sound.PlaySound(1,7);
             }
         }
 
@@ -128,6 +134,18 @@ public PlayerAnim playerAnim;
         else
         {
             rb.gravityScale = 3;
+        }
+        //爬楼梯
+        if (_isLadder)
+        {
+            if (verticalInput != 0)
+            {
+                sound.PlaySoundLoop(2,0);
+            }
+            else
+            {
+                sound.StopSound(2);
+            }
         }
     }
     void FixedUpdate()

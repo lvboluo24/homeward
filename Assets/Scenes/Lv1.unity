@@ -86423,11 +86423,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 718799144901677972, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 28.67
+      value: 42.69
       objectReference: {fileID: 0}
     - target: {fileID: 718799144901677972, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.69
+      value: -0.87
       objectReference: {fileID: 0}
     - target: {fileID: 718799144901677972, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -86491,6 +86491,10 @@ PrefabInstance:
       objectReference: {fileID: 6200000, guid: 14cc2683f08837842ae4085523fb605f, type: 2}
     - target: {fileID: 6986709608083357851, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7237838778842940245, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
+      propertyPath: soundType.Array.data[1]
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8259676102185292296, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
