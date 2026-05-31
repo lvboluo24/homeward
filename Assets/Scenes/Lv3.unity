@@ -23441,6 +23441,10 @@ PrefabInstance:
       propertyPath: door
       value: 
       objectReference: {fileID: 1365167921}
+    - target: {fileID: 238984501850850825, guid: 44f5d3ab56c69c94291533343fca5b88, type: 3}
+      propertyPath: type
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 387781288570208760, guid: 44f5d3ab56c69c94291533343fca5b88, type: 3}
       propertyPath: m_Name
       value: TouchTriggerButton (15)
@@ -52429,6 +52433,10 @@ PrefabInstance:
     - target: {fileID: 455988165873331161, guid: 472eb3d22c1e9fd4b9d1ecf0c8b2a3d7, type: 3}
       propertyPath: m_Name
       value: Door (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1002322058658012367, guid: 472eb3d22c1e9fd4b9d1ecf0c8b2a3d7, type: 3}
+      propertyPath: demandnumber
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3760751541898088076, guid: 472eb3d22c1e9fd4b9d1ecf0c8b2a3d7, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
