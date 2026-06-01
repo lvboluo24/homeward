@@ -17,15 +17,35 @@ public class TouchButton : MonoBehaviour
     public Door door;
     [Tooltip("控制的喷气")]
     public Air air;
+//图像组件
+    public SpriteRenderer renderer1;
+//图片
+    public Sprite[] sprite1;
+
+
+
+    
     void Start()
     {
-
+       
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        //如果物体按住
+        if (_isTouch)
+        {
+            //缩放y轴
+            renderer1.sprite = sprite1[0];
+            
+        }
+        else
+        {
+            //缩放
+            renderer1.sprite = sprite1[1];
+           
+        }
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -34,6 +54,7 @@ public class TouchButton : MonoBehaviour
         {
             if (type == 0)
             {
+                _isTouch = true;
                 if (!_isActivate)
                 {
                     if (door != null)

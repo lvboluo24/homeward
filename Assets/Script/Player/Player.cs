@@ -72,6 +72,7 @@ public Transform spawnPosition;
         {
             jump = 10f;
         }
+        spawnPosition = transform;
     }
 
 

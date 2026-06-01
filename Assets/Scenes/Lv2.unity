@@ -35887,18 +35887,6 @@ PrefabInstance:
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 1002987427}
-    - target: {fileID: 6222419286419839677, guid: 4dd2a8a30a3dc6c419447c69a60bde29, type: 3}
-      propertyPath: soundList.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6222419286419839677, guid: 4dd2a8a30a3dc6c419447c69a60bde29, type: 3}
-      propertyPath: soundList.Array.data[5]
-      value: 
-      objectReference: {fileID: 8300000, guid: 0a4793ab04c23724fbc34c072f7b1258, type: 3}
-    - target: {fileID: 6222419286419839677, guid: 4dd2a8a30a3dc6c419447c69a60bde29, type: 3}
-      propertyPath: soundList.Array.data[6]
-      value: 
-      objectReference: {fileID: 8300000, guid: 2e876a32501d2a54cbfabd85c045a296, type: 3}
     - target: {fileID: 7686277338554597309, guid: 4dd2a8a30a3dc6c419447c69a60bde29, type: 3}
       propertyPath: m_Name
       value: Canvas

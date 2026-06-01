@@ -19357,6 +19357,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1660454452807680991, guid: 77ba3efc342d78241b33e1a29418e33a, type: 3}
+      propertyPath: sound
+      value: 
+      objectReference: {fileID: 1586630996}
+    - target: {fileID: 1660454452807680991, guid: 77ba3efc342d78241b33e1a29418e33a, type: 3}
       propertyPath: _isWatch
       value: 0
       objectReference: {fileID: 0}
@@ -83226,6 +83230,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4dd2a8a30a3dc6c419447c69a60bde29, type: 3}
+--- !u!114 &1586630996 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6222419286419839677, guid: 4dd2a8a30a3dc6c419447c69a60bde29, type: 3}
+  m_PrefabInstance: {fileID: 1586630995}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2b849d22ad38c34c85f3b3ef4ee4564, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1618889209
 PrefabInstance:
   m_ObjectHideFlags: 0
