@@ -451,7 +451,19 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 397779631424450473, guid: 4dd2a8a30a3dc6c419447c69a60bde29, type: 3}
+      propertyPath: m_text
+      value: "\u5F00\u59CB\u65B0\u6E38\u620F"
+      objectReference: {fileID: 0}
+    - target: {fileID: 397779631424450473, guid: 4dd2a8a30a3dc6c419447c69a60bde29, type: 3}
+      propertyPath: m_fontSize
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 426888313351250953, guid: 4dd2a8a30a3dc6c419447c69a60bde29, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 461663143362593481, guid: 4dd2a8a30a3dc6c419447c69a60bde29, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
