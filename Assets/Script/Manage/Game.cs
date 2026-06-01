@@ -29,22 +29,25 @@ public class Game : MonoBehaviour
     private Player player;
     private MainCamera mainCamera;
     private Grid grid;
+    //音效
+    public Sound sound;
+
     void Awake()
     {
-        if (level!=0)
+        if (level != 0)
         {
-             player = FindObjectOfType<Player>();
-        mainCamera = FindObjectOfType<MainCamera>();
-        grid = FindObjectOfType<Grid>();
-                boxes = new List<Box>(Object.FindObjectsOfType<Box>());
+            player = FindObjectOfType<Player>();
+            mainCamera = FindObjectOfType<MainCamera>();
+            grid = FindObjectOfType<Grid>();
+            boxes = new List<Box>(Object.FindObjectsOfType<Box>());
         }
-       
+
 
 
     }
     void Start()
     {
-        if (level==3&&clockStatus==1)
+        if (level == 3 && clockStatus == 1)
         {
             //启动钟摆协程
             StartCoroutine(Clock());
@@ -59,29 +62,29 @@ public class Game : MonoBehaviour
     //检测玩家位置
     public void CheckPlayerPosition()
     {
-        if (level!=0)
+        if (level != 0)
         {
             if (level == 1)
-        {
-            //x为玩家x位置除以17.77777f的整数
-            x = (int)((player.transform.position.x + 8.88888f) / 17.77777f);
-            //y为玩家y位置除以10的整数
-            y = (int)((player.transform.position.y + 5) / 10);
+            {
+                //x为玩家x位置除以17.77777f的整数
+                x = (int)((player.transform.position.x + 8.88888f) / 17.77777f);
+                //y为玩家y位置除以10的整数
+                y = (int)((player.transform.position.y + 5) / 10);
+            }
+            else if (level == 2)
+            {
+                x = (int)((player.transform.position.x + 8.88888f) / 17.77777f);
+                y = (int)((player.transform.position.y + 5) / 10);
+            }
+            else if (level == 3)
+            {
+                x = (int)((player.transform.position.x + 8.88888f) / 17.77777f);
+                y = (int)((player.transform.position.y + 5) / 10);
+            }
+            mainCamera.x = x;
+            mainCamera.y = y;
         }
-        else if (level == 2)
-        {
-            x = (int)((player.transform.position.x + 8.88888f) / 17.77777f);
-            y = (int)((player.transform.position.y + 5) / 10);
-        }
-        else if (level == 3)
-        {
-            x = (int)((player.transform.position.x + 8.88888f) / 17.77777f);
-            y = (int)((player.transform.position.y + 5) / 10);
-        }
-        mainCamera.x = x;
-        mainCamera.y = y;
-        }
-        
+
     }
     //检查世界类型
     public void CheckWorldType()
@@ -102,18 +105,21 @@ public class Game : MonoBehaviour
     public void ConvertWorldType()
     {
         if (worldType == 0)
-                    {
-                        worldType = 1;
-                    }
-                    else if (worldType == 1)
-                    {
-                        worldType = 0;
-                    }
-                    grid.CheckWorldType();
-                    foreach (Box box in boxes)
-                    {
-                        box.UpdateWorld();
-                    }
+        {
+            worldType = 1;
+        }
+        else if (worldType == 1)
+        {
+            worldType = 0;
+        }
+        grid.CheckWorldType();
+        foreach (Box box in boxes)
+        {
+            box.UpdateWorld();
+        }
+        //播放音效
+        sound.PlaySound(1,5);
+
     }
 
     //检查齿轮
@@ -131,7 +137,7 @@ public class Game : MonoBehaviour
     public IEnumerator Clock()
     {
         int count = 0;
-        while (count<9999999)
+        while (count < 9999999)
         {
             //如果钟摆状态为1，自动摆动
             if (clockStatus == 1)

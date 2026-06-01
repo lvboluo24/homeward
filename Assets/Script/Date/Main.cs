@@ -7,6 +7,7 @@ public class Main : MonoBehaviour
 {
     Game game;
     public GameObject node;
+    public GameObject maker;
     void Start()
     {
         game = FindObjectOfType<Game>();
@@ -18,6 +19,7 @@ public class Main : MonoBehaviour
         {
             node.SetActive(false);
         }
+        maker.SetActive(false);
     }
 
     // Update is called once per frame
@@ -30,6 +32,11 @@ public class Main : MonoBehaviour
             if (hit.collider != null)
             {
                 Debug.Log(hit.collider.name);
+            }
+            //如果节显示
+            if (maker.activeSelf == true)
+            {
+                maker.SetActive(false);
             }
         }
     }
@@ -58,5 +65,10 @@ public class Main : MonoBehaviour
     {
         Application.Quit();
     
+    }
+    //显示节
+    public void ShowMaker()
+    {
+        maker.SetActive(true);
     }
 }
