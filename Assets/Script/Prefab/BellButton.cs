@@ -25,7 +25,7 @@ public class BellButton : MonoBehaviour
     void Update()
     {
         //按键5
-        if (Input.GetKeyDown(KeyCode.Alpha4))
+        if (Input.GetKeyDown(KeyCode.Alpha4)||Input.GetKeyDown(KeyCode.Alpha1))
         {
             if (_isPlayer && game.gear[3] >= 1)
             {

@@ -54,6 +54,11 @@ void Awake()
         {
             index = 2;
         }
+        else if (game.level == 3)
+        {
+            index = 5;
+        }
+
         audioSource.clip = musicList[index];
         audioSource.Play();
         

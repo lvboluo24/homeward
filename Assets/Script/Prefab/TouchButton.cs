@@ -37,13 +37,13 @@ public class TouchButton : MonoBehaviour
         if (_isTouch)
         {
             //缩放y轴
-            renderer1.sprite = sprite1[0];
+            renderer1.sprite = sprite1[1];
             
         }
         else
         {
             //缩放
-            renderer1.sprite = sprite1[1];
+            renderer1.sprite = sprite1[0];
            
         }
     }

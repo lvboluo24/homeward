@@ -51495,6 +51495,7 @@ MonoBehaviour:
   - {fileID: 1342822026}
   play: 0
   type: 1
+  isplay: 0
 --- !u!1001 &1350156894
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -83347,7 +83348,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8363649127238611560, guid: 4dd2a8a30a3dc6c419447c69a60bde29, type: 3}
       propertyPath: test
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
