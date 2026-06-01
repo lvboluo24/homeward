@@ -17,7 +17,7 @@ public class Air : MonoBehaviour
     [Tooltip("类型,0,按钮激活，1，和平激活，2，战争激活")]
     public int type;
     public Particle particle;
-
+    public bool _a;
     Game game;
 
     private void Awake()
@@ -68,12 +68,17 @@ public class Air : MonoBehaviour
         }
         if (_isAir)
         {
+            //显示粒子
+            particle.gameObject.SetActive(true);
             particle.play = true;
         }
         else
         {
             particle.play = false;
+            //隐藏粒子
+            particle.gameObject.SetActive(false);
         }
+        
 
     }
     // 当物体进入触发器

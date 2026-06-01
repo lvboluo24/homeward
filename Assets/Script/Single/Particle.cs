@@ -7,6 +7,8 @@ public class Particle : MonoBehaviour
     public ParticleSystem[] ps;
     public bool play;
     public int type;//0, 持续播放，1，单次播放
+public bool isplay;//已经播放
+
     void Start()
     {
         foreach (var item in ps)
@@ -20,25 +22,44 @@ public class Particle : MonoBehaviour
     {
         if (type == 0)
         {
-             if (!play)
-        {
-            foreach (var item in ps)
+            if (!play)
             {
-                item.Play();
+                foreach (var item in ps)
+                {
+                    item.Play();
+                }
+
             }
 
-        }
-        // 只有 从“在地面”变成“不在地面”时，才停止一次
-        else if (play)
-        {
-            foreach (var item in ps)
+            else if (play)
             {
-                item.Stop(true);
-            }
+                foreach (var item in ps)
+                {
+                    item.Stop(true);
+                }
 
+            }
         }
+        if (type == 1)
+        {
+            if (!isplay&&play)
+            {
+                foreach (var item in ps)
+                {
+                    item.Play();
+                }
+                isplay = true;
+            }
+            else if (!play)
+            {
+                foreach (var item in ps)
+                {
+                    item.Stop();
+                }
+                
+            }
         }
-       
+
 
     }
     public void Play()
@@ -61,12 +82,12 @@ public class Particle : MonoBehaviour
         {
             item.Stop(true);
         }
-        
+
     }
     public IEnumerator PlayParticlesolo()
     {
-       ps[0].Play();
-       yield return new WaitForSeconds(0.5f);
-       ps[0].Stop(true);
+        ps[0].Play();
+        yield return new WaitForSeconds(0.5f);
+        ps[0].Stop(true);
     }
 }
