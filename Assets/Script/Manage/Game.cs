@@ -31,6 +31,7 @@ public class Game : MonoBehaviour
     private Grid grid;
     //音效
     public Sound sound;
+    public Particle particle;
 
     void Awake()
     {
@@ -58,6 +59,16 @@ public class Game : MonoBehaviour
     {
         CheckPlayerPosition();
         CheckWorldType();
+        if (Input.GetMouseButtonDown(0))
+        {
+           
+            //获取点击位置
+            Vector2 clickPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            particle.transform.position = clickPos;
+            particle.Play();
+     
+
+        }
     }
     //检测玩家位置
     public void CheckPlayerPosition()

@@ -16,6 +16,7 @@ public class Air : MonoBehaviour
     public int number;
     [Tooltip("类型,0,按钮激活，1，和平激活，2，战争激活")]
     public int type;
+    public Particle particle;
 
     Game game;
 
@@ -64,6 +65,14 @@ public class Air : MonoBehaviour
             {
                 _isAir = true;
             }
+        }
+        if (_isAir)
+        {
+            particle.play = true;
+        }
+        else
+        {
+            particle.play = false;
         }
 
     }

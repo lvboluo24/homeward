@@ -8,6 +8,9 @@ public class Main : MonoBehaviour
     Game game;
     public GameObject node;
     public GameObject maker;
+
+
+    
     void Start()
     {
         game = FindObjectOfType<Game>();
@@ -38,6 +41,7 @@ public class Main : MonoBehaviour
             {
                 maker.SetActive(false);
             }
+
         }
     }
     //转到对应关卡
