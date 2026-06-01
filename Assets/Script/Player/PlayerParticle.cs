@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerParticle : MonoBehaviour
 {
-    public ParticleSystem ps;
+    public ParticleSystem[] ps;
     public Player player;
 
     // 加入一个变量，记录上一帧是否在地面
@@ -12,7 +12,10 @@ public class PlayerParticle : MonoBehaviour
 
     void Start()
     {
-        ps.Stop();
+        foreach (var item in ps)
+        {
+            item.Stop();
+        }
         lastGrounded = false;
     }
 
@@ -23,13 +26,19 @@ public class PlayerParticle : MonoBehaviour
         // 只有 从“不在地面”变成“在地面”时，才播放一次
         if (currentGrounded && !lastGrounded)
         {
-            ps.Play();
+            foreach (var item in ps)
+            {
+                item.Play();
+            }
 
         }
         // 只有 从“在地面”变成“不在地面”时，才停止一次
         else if (!currentGrounded && lastGrounded)
         {
-            ps.Stop(true);
+            foreach (var item in ps)
+            {
+                item.Stop(true);
+            }
 
         }
         if (player.horizontalInput==1)
