@@ -15,6 +15,7 @@ public class Ghost : MonoBehaviour
     //当前位置
     private Vector2 currentPosition;
     public bool _isReset;
+        public Sound sound;
 
     void Start()
     {
@@ -37,12 +38,20 @@ public class Ghost : MonoBehaviour
             {
                 Vector2 moveDirection = (player.transform.position - transform.position).normalized;
                 rb.velocity = new Vector2(moveDirection.x * moveSpeed, rb.velocity.y);
+                //播放音效
+                sound.PlaySoundLoop(0,3);
             }
             else
             {
                 rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y);
+                //停止音效
+                sound.StopSound(0);
             }
 
+        }
+        else
+        {
+            sound.StopSound(0);
         }
 
     }

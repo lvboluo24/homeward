@@ -10,19 +10,22 @@ public class Chase : MonoBehaviour
     private Player player;
     public Scope scope;
     private Rigidbody2D rb;
-        //当前位置
+    //当前位置
     private Vector2 currentPosition;
     public bool _isReset;
-void Awake()
+
+    //音效组件
+    public Sound sound;
+    void Awake()
     {
         game = GameObject.Find("GameManager").GetComponent<Game>();
         player = GameObject.Find("Player").GetComponent<Player>();
-        rb = GetComponent<Rigidbody2D>();        
+        rb = GetComponent<Rigidbody2D>();
         currentPosition = transform.position;
     }
     void Start()
     {
-        
+
     }
 
 
@@ -38,10 +41,14 @@ void Awake()
 
             // 2. 2D物理移动：固定速度追踪玩家（无惯性、平滑追踪）
             rb.velocity = moveDirection * moveSpeed;
+            //播放音效
+            sound.PlaySoundLoop(0,3);
         }
         else
         {
             rb.velocity = new Vector2(0, 0);
+            //停止音效
+            sound.StopSound(0);
         }
     }
     private void OnCollisionEnter2D(Collision2D other)
@@ -53,7 +60,7 @@ void Awake()
         }
     }
     //协程
-private IEnumerator ResetPosition()
+    private IEnumerator ResetPosition()
     {
         if (!_isReset)
         {
