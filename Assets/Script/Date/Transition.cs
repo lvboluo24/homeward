@@ -196,6 +196,7 @@ public class Transition : MonoBehaviour
     }
     public IEnumerator playlevel(int level)
     {
+        hideAll();
         yield return showTime;
         if (level == 2)
         {
