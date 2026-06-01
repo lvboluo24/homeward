@@ -21,11 +21,14 @@ public class Set : MonoBehaviour
     public Game game;
 
     public Sound uiSound;
+
+
     void Awake()
     {
         closeall();
         //获取所有音效组件
         sound = new List<Sound>(FindObjectsOfType<Sound>());
+
         //获取游戏组件
         game = FindObjectOfType<Game>();
         music = FindObjectOfType<Music>();

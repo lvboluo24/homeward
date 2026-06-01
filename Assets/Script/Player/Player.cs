@@ -54,7 +54,8 @@ public PlayerAnim playerAnim;
     public Rigidbody2D rb;
     public Sound sound;
     private Game game;
-
+[Tooltip("生成位置")]
+public Transform spawnPosition;
 
     void Start()
     {
@@ -190,7 +191,10 @@ public PlayerAnim playerAnim;
         if (other.CompareTag("Ladder"))
         {
             _isLadder = true;
-          
+        }
+        if (other.CompareTag("checkpoint"))
+        {
+            spawnPosition = other.transform;
         }
     }
 
@@ -277,20 +281,11 @@ _isMovingGround = false;
             yield return new WaitForSeconds(1f);
             _isDead = false;
             playerAnim.anim.Play("idle");
-            //找到A节点
-            GameObject ReviveNode = GameObject.Find("ReviveNode");
-            //遍历A节点下的脚本Revive
-            foreach (Transform child in ReviveNode.transform)
-            {
-                //获取脚本Revive
-                Revive revive = child.GetComponent<Revive>();
-                //判断是否是当前玩家的复活点
-                if (revive.x == game.x && revive.y == game.y)
-                {
+
                     //复活
-                    transform.position = child.position;
-                }
-            }
+                    transform.position = spawnPosition.position;
+     
+            
         }
 
     }

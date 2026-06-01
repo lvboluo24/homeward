@@ -33,11 +33,18 @@ public class Transition : MonoBehaviour
     Game game;
     [Tooltip("过场场景显示时间")]
     public float showTime;
+    [Tooltip("测试")]
+    public bool test;
+
 
     void Awake()
     {
         game = FindObjectOfType<Game>();
-        StartCoroutine(playlevel(game.level));
+        if (!test)
+        {
+            StartCoroutine(playlevel(game.level));
+        }
+        
         tmpText.text = "";
         textIndex = 0;
         charIndex = 0;
