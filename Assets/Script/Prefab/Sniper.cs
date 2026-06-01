@@ -17,6 +17,8 @@ public class Sniper : MonoBehaviour
     public Transform arrowSpawnPoint;
     
 private Player player;
+    //音效组件
+    public Sound sound;
 void Awake()
     {
         player = GameObject.Find("Player").GetComponent<Player>();
@@ -49,6 +51,8 @@ void Awake()
                     arrow.transform.localScale = new Vector3(-arrow.transform.localScale.x, arrow.transform.localScale.y, arrow.transform.localScale.z);
                     arrow.transform.rotation = Quaternion.Euler(arrow.transform.eulerAngles.x, arrow.transform.eulerAngles.y, - arrow.transform.eulerAngles.z);
                 }
+                //播放音效
+                sound.PlaySound(0,0);
             }
         }
         else
