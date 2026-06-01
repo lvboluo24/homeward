@@ -37,6 +37,7 @@ public class ThrowMineGear : MonoBehaviour
         {
             isBoom = true;
                            //播放音效
+                           
         sound.PlaySound(0,0);
         //播放粒子系统
         particle.play=true;

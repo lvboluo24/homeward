@@ -8,6 +8,8 @@ public class End : MonoBehaviour
     public int Level;
     Transition transition;
     public bool _isEnd;
+    public Game game;
+
     void Start()
     {
         transition = FindObjectOfType<Transition>();

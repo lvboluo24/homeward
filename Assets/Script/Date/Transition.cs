@@ -36,7 +36,7 @@ public class Transition : MonoBehaviour
     [Tooltip("测试")]
     public bool test;
 
-
+    public GameObject end;
     void Awake()
     {
         game = FindObjectOfType<Game>();
@@ -252,6 +252,7 @@ hideAll();
                 yield return new WaitForSeconds(showTime);
             }
             hideAll();
+            end.SetActive(true);
         }
     }
     public void playlevelend(int level)

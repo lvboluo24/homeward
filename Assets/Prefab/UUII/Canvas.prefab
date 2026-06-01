@@ -16160,6 +16160,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4719602431784373897, guid: 92fb2f81f87aa9543886a9f4278f12e9, type: 3}
+      propertyPath: end
+      value: 
+      objectReference: {fileID: 824836599682470874}
+    - target: {fileID: 4719602431784373897, guid: 92fb2f81f87aa9543886a9f4278f12e9, type: 3}
       propertyPath: test
       value: 1
       objectReference: {fileID: 0}
