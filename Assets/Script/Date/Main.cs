@@ -9,12 +9,16 @@ public class Main : MonoBehaviour
     public GameObject node;
     public GameObject maker;
 
+    Black black;
+    [Tooltip("是否转换场景")]
+    public bool isSkip = false;
 
-    
+
     void Start()
     {
         game = FindObjectOfType<Game>();
-        if (game.level==0)
+        black = FindObjectOfType<Black>();
+        if (game.level == 0)
         {
             node.SetActive(true);
         }
@@ -23,6 +27,7 @@ public class Main : MonoBehaviour
             node.SetActive(false);
         }
         maker.SetActive(false);
+        isSkip = false;
     }
 
     // Update is called once per frame
@@ -47,9 +52,10 @@ public class Main : MonoBehaviour
     //转到对应关卡
     public void Skip(int level)
     {
-        if (level == 1)
+        if (level == 1 && isSkip == false)
         {
-            SceneManager.LoadScene("Lv1");
+            isSkip = true;
+            StartCoroutine(CheckMakerEnd());
         }
         else if (level == 2)
         {
@@ -68,11 +74,19 @@ public class Main : MonoBehaviour
     public void Exit()
     {
         Application.Quit();
-    
+
     }
     //显示节
     public void ShowMaker()
     {
         maker.SetActive(true);
+    }
+    //协程
+    private IEnumerator CheckMakerEnd()
+    {
+        black.ShowBlackSlow();
+        yield return new WaitForSeconds(black.hideTime);
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene("Lv1");
     }
 }

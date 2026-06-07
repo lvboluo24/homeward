@@ -15,26 +15,35 @@ public class Video : MonoBehaviour
     public float time;
     [Tooltip("是否播放视频")]
     public bool _isPlayVideo;
-    [Tooltip("ui图片")]
-    public Image Image;
-[Tooltip("隐藏时间")]
-public float hideTime;
-Game game;  
-Music music;
+
+    [Tooltip("隐藏时间")]
+    public float hideTime;
+[Tooltip("是否测试")]
+public bool isTest;
+
+
+
+    Game game;
+    Music music;
+
+    Black black;
 
 
     void Awake()
     {
         game = FindObjectOfType<Game>();
         music = FindObjectOfType<Music>();
-        if (game.level == 1)
+        black = FindObjectOfType<Black>();
+        //获取视频时间
+
+        //判断是否播放视频
+        if (game.level == 1&&!isTest)
         {
             PlayVideo();
         }
         else
         {
             videoEndnode.SetActive(false);
-
         }
     }
 
@@ -52,47 +61,23 @@ Music music;
     //播放视频
     public void PlayVideo()
     {
-        Image.enabled = false;
-        videoEndnode.SetActive(true);
-        videoPlayer.Play();
+
         StartCoroutine(CheckVideoEnd());
     }
     //协程
     private IEnumerator CheckVideoEnd()
     {
-        Color startColor = Image.color;
+        black.ShowBlack();
+        yield return new WaitForSeconds(0.5f);
+        videoEndnode.SetActive(true);
+        videoPlayer.Play();
+        yield return new WaitForSeconds(0.1f);
+        black.HideBlack();
         yield return new WaitForSeconds(time);
-        //停止视频播放
-        videoPlayer.Stop();
-        Image.enabled = true;
-        //显示图片组件
-        // 记录开始时的颜色（保留RGB，只修改透明度）
-
-
-        // 已经过的时间
-        float elapsedTime = 0f;
-
-        // 在总时长内循环执行
-        while (elapsedTime < hideTime)
-        {
-            elapsedTime += Time.deltaTime;
-
-            // 计算透明度：从1 线性过渡到 0
-            float alpha = Mathf.Lerp(1f, 0f, elapsedTime / hideTime);
-
-            // 赋值新颜色
-            Image.color = new Color(startColor.r, startColor.g, startColor.b, alpha);
-
-            // 等待一帧，继续循环
-            yield return null;
-        }
-
-        // 最后确保完全透明
-        Image.color = new Color(startColor.r, startColor.g, startColor.b, 0f);
-
-        // 可选：完全消失后隐藏物体
-        Image.enabled = true;
+        black.HideBlackSlow();
+        yield return new WaitForSeconds(0.1f);
         videoEndnode.SetActive(false);
+       
         music.PlayMusic();
     }
 
