@@ -302,6 +302,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   peaceBackground: {fileID: 995307224347000677}
   warBackground: {fileID: 6238531838071804958}
+  peaceBackgroundSr: {fileID: 8371632800776090714}
 --- !u!1 &8060997462303461957
 GameObject:
   m_ObjectHideFlags: 0
