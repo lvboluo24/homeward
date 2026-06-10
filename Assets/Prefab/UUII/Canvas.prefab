@@ -735,7 +735,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7355445682153280004
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9091,6 +9091,18 @@ MonoBehaviour:
           m_StringArgument: playReverse
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 9092483565967976284}
+        m_TargetAssemblyTypeName: Main, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4736780771303162092
 GameObject:
   m_ObjectHideFlags: 0
@@ -10433,6 +10445,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: play
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 9092483565967976284}
+        m_TargetAssemblyTypeName: Main, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &5574264212595042686
@@ -16399,6 +16423,10 @@ PrefabInstance:
       propertyPath: maker
       value: 
       objectReference: {fileID: 411917710051258880}
+    - target: {fileID: 5422402496869620669, guid: 92fb2f81f87aa9543886a9f4278f12e9, type: 3}
+      propertyPath: sound
+      value: 
+      objectReference: {fileID: 6222419286419839677}
     - target: {fileID: 8053866956467114640, guid: 92fb2f81f87aa9543886a9f4278f12e9, type: 3}
       propertyPath: m_Name
       value: DataManager

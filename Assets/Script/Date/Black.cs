@@ -93,6 +93,7 @@ void Awake()
     //协程,慢慢显示
     IEnumerator IShowBlack()
     {
+        
         Color startColor = Image.color;
         // 已经过的时间
         float elapsedTime = 0f;
@@ -114,7 +115,7 @@ void Awake()
         }
 
         Image.color = new Color(startColor.r, startColor.g, startColor.b, 1f);
-
+        
     }
 
 

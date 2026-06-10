@@ -12,15 +12,22 @@ public class Main : MonoBehaviour
     Black black;
     [Tooltip("是否转换场景")]
     public bool isSkip = false;
+    public Sound sound;
 
-
-    void Start()
+    void Awake()
     {
         game = FindObjectOfType<Game>();
         black = FindObjectOfType<Black>();
+        
+    }
+    void Start()
+    {
+
         if (game.level == 0)
         {
             node.SetActive(true);
+            black.HideBlackSlow();
+            Debug.Log("显示黑色");
         }
         else
         {
@@ -88,5 +95,10 @@ public class Main : MonoBehaviour
         yield return new WaitForSeconds(black.hideTime);
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene("Lv1");
+    }
+    //播放音效
+    public void PlaySound()
+    {
+        sound.PlaySound(0,3);
     }
 }
