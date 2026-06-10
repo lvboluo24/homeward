@@ -7,7 +7,7 @@ public class Particle : MonoBehaviour
     public ParticleSystem[] ps;
     public bool play;
     public int type;//0, 持续播放，1，单次播放
-public bool isplay;//已经播放
+    public bool isplay;//已经播放
 
     void Start()
     {
@@ -42,7 +42,7 @@ public bool isplay;//已经播放
         }
         if (type == 1)
         {
-            if (!isplay&&play)
+            if (!isplay && play)
             {
                 foreach (var item in ps)
                 {
@@ -56,7 +56,7 @@ public bool isplay;//已经播放
                 {
                     item.Stop();
                 }
-                
+
             }
         }
 

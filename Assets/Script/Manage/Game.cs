@@ -105,7 +105,7 @@ public class Game : MonoBehaviour
         {
             if (level <= 2)
             {
-                if (_isWatch && gear[3] > 0)
+                if (_isWatch && gear[3] > 0 && !grid.isConverting)
                 {
                     ConvertWorldType();
                 }
