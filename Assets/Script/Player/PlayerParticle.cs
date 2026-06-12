@@ -6,7 +6,7 @@ public class PlayerParticle : MonoBehaviour
 {
     public ParticleSystem[] ps;
     public Player player;
-
+public ParticleSystem a;
     // 加入一个变量，记录上一帧是否在地面
     private bool lastGrounded;
 
@@ -17,6 +17,7 @@ public class PlayerParticle : MonoBehaviour
             item.Stop();
         }
         lastGrounded = false;
+        a.Play();
     }
 
     void Update()
