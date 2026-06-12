@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Express : MonoBehaviour
 {
-    // Start is called before the first frame update
+    //图片素材
+public Sprite[] sprites;
     void Start()
     {
         
