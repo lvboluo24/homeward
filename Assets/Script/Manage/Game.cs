@@ -31,7 +31,7 @@ public class Game : MonoBehaviour
     private Grid grid;
     //音效
     public Sound sound;
-    public Particle particle;
+    public ParticleSystem particle;
 
     void Awake()
     {
@@ -66,7 +66,7 @@ public class Game : MonoBehaviour
             Vector2 clickPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             particle.transform.position = clickPos;
             particle.Play();
-     
+            Debug.Log(clickPos);
 
         }
     }
