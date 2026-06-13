@@ -18,6 +18,7 @@ public class Chase : MonoBehaviour
     public Sound sound;
     public Express express;
     int isExp = 0;
+    public Animator animator;
     void Awake()
     {
         game = GameObject.Find("GameManager").GetComponent<Game>();
@@ -28,6 +29,7 @@ public class Chase : MonoBehaviour
     void Start()
     {
 
+        animator.speed = 0;
     }
 
 
@@ -36,12 +38,22 @@ public class Chase : MonoBehaviour
         if (isExp == 0&&scope._isPlayer)
         {
             express.ExpAngry();
+            animator.Play("MonIdle");
+            animator.speed = 1;
             isExp = 1;
+            
         }
         if (!scope._isPlayer)
         {
             isExp = 0;
             express.ExpAno();
+            animator.speed = 0;
+
+        }
+        if (scope._isPlayer)
+        {
+
+            
         }
     }
     void FixedUpdate()

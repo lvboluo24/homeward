@@ -37,7 +37,7 @@ public Animator animator;
         sr.enabled = true;
         sr.sprite = sprites[2];
         animator.Play("ExpAnger");
-        Debug.Log("ExpAnger");
+
     }
 
 
