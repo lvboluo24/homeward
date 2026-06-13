@@ -85232,6 +85232,10 @@ PrefabInstance:
       propertyPath: m_TargetCamera
       value: 
       objectReference: {fileID: 8175315239978918206}
+    - target: {fileID: 3640331482923437863, guid: 4dd2a8a30a3dc6c419447c69a60bde29, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5871388435619347106, guid: 4dd2a8a30a3dc6c419447c69a60bde29, type: 3}
       propertyPath: audioSource
       value: 

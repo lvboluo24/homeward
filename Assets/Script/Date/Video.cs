@@ -72,7 +72,7 @@ public bool isTest;
         videoEndnode.SetActive(true);
         videoPlayer.Play();
         yield return new WaitForSeconds(0.1f);
-        black.HideBlack();
+        
         yield return new WaitForSeconds(time);
         black.HideBlackSlow();
         yield return new WaitForSeconds(0.1f);
