@@ -20,7 +20,7 @@ public class Scope : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-if (other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
             _isPlayer = true;
 
@@ -36,7 +36,7 @@ if (other.CompareTag("Player"))
     }
     private void OnTriggerStay2D(Collider2D other)
     {
-        
+
 
     }
 }

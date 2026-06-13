@@ -16,6 +16,8 @@ public class Chase : MonoBehaviour
 
     //音效组件
     public Sound sound;
+    public Express express;
+    int isExp = 0;
     void Awake()
     {
         game = GameObject.Find("GameManager").GetComponent<Game>();
@@ -31,7 +33,16 @@ public class Chase : MonoBehaviour
 
     void Update()
     {
-
+        if (isExp == 0&&scope._isPlayer)
+        {
+            express.ExpAngry();
+            isExp = 1;
+        }
+        if (!scope._isPlayer)
+        {
+            isExp = 0;
+            express.ExpAno();
+        }
     }
     void FixedUpdate()
     {
