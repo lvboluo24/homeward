@@ -149,7 +149,7 @@ PrefabInstance:
     - target: {fileID: 1660454452807680991, guid: 77ba3efc342d78241b33e1a29418e33a, type: 3}
       propertyPath: particle
       value: 
-      objectReference: {fileID: 1970659086}
+      objectReference: {fileID: 1970659082}
     - target: {fileID: 1660454452807680991, guid: 77ba3efc342d78241b33e1a29418e33a, type: 3}
       propertyPath: gear.Array.size
       value: 4
@@ -355,56 +355,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 771060406864424375, guid: 3291ee7ab6b067d4482ae859be3cd8df, type: 3}
-      insertIndex: 1
-      addedObject: {fileID: 1970659086}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3291ee7ab6b067d4482ae859be3cd8df, type: 3}
---- !u!1 &1970659081 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 771060406864424375, guid: 3291ee7ab6b067d4482ae859be3cd8df, type: 3}
-  m_PrefabInstance: {fileID: 1970659080}
-  m_PrefabAsset: {fileID: 0}
 --- !u!198 &1970659082 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 6429207582651438270, guid: 3291ee7ab6b067d4482ae859be3cd8df, type: 3}
   m_PrefabInstance: {fileID: 1970659080}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &1970659083 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 490945732412454969, guid: 3291ee7ab6b067d4482ae859be3cd8df, type: 3}
-  m_PrefabInstance: {fileID: 1970659080}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &1970659084 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 2777537144402208007, guid: 3291ee7ab6b067d4482ae859be3cd8df, type: 3}
-  m_PrefabInstance: {fileID: 1970659080}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &1970659085 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 3059641407311543518, guid: 3291ee7ab6b067d4482ae859be3cd8df, type: 3}
-  m_PrefabInstance: {fileID: 1970659080}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1970659086
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1970659081}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2fcb5385a5ff1943827b2aa76cb7f7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ps:
-  - {fileID: 1970659082}
-  - {fileID: 1970659085}
-  - {fileID: 1970659084}
-  - {fileID: 1970659083}
-  play: 0
-  type: 1
-  isplay: 0
 --- !u!20 &2193378665492792767
 Camera:
   m_ObjectHideFlags: 0

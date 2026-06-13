@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using DG.Tweening;
 
 public class Transition : MonoBehaviour
 {
@@ -37,6 +38,7 @@ public class Transition : MonoBehaviour
     public bool test;
 
     public GameObject end;
+    public Image blackImage;
     void Awake()
     {
         game = FindObjectOfType<Game>();
@@ -48,6 +50,8 @@ public class Transition : MonoBehaviour
         tmpText.text = "";
         textIndex = 0;
         charIndex = 0;
+        //勾选图像组件
+        blackImage.enabled = true;
     }
     void Start()
     {
@@ -151,6 +155,8 @@ public class Transition : MonoBehaviour
         {
             node5[i].SetActive(false);
         }
+        
+        
     }
     public IEnumerator play(int index)
     {
@@ -200,6 +206,7 @@ public class Transition : MonoBehaviour
             }
             hideAll();
         }
+        blackImage.DOFade(0, 1f);
     }
     public IEnumerator playlevel(int level)
     {
@@ -207,7 +214,7 @@ public class Transition : MonoBehaviour
         yield return showTime;
         if (level == 2)
         {
-hideAll();
+             hideAll();
             for (int i = 0; i < node1.Count; i++)
             {
                 node1[i].SetActive(true);
@@ -254,6 +261,9 @@ hideAll();
             hideAll();
             end.SetActive(true);
         }
+        blackImage.DOFade(0, 1f);
+        yield return new WaitForSeconds(1f);
+        blackImage.enabled = false;
     }
     public void playlevelend(int level)
     {
