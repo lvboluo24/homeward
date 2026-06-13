@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class Background : MonoBehaviour
 {
-    [Tooltip("0,和平，1，和平黑白，2，战争，3，战争黑白")]
+    [Tooltip("0,和平，1，战争")]
     public List<GameObject> node = new List<GameObject>();
     [Tooltip("sr组件")]
     public List<SpriteRenderer> sr = new List<SpriteRenderer>();
     private Game game;
-    //获取sr
-
+    [Tooltip("和平")]
+    public List<GameObject> peacenode = new List<GameObject>();
+    [Tooltip("战争")]
+    public List<GameObject> warnode = new List<GameObject>();
 
     void Awake()
     {
@@ -31,7 +33,7 @@ public class Background : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     //直接检查背景世界类型
     public void CheckBackgroundWorldType()
@@ -50,6 +52,29 @@ public class Background : MonoBehaviour
     //遮罩前事件
     public void CoverTile1()
     {
+        for (int i = 0; i < peacenode.Count; i++)
+        {
+            if (game.worldType == 0)
+            {
+                peacenode[i].SetActive(true);
+            }
+            else
+            {
+                peacenode[i].SetActive(false);
+            }
+        }
+        for (int i = 0; i < warnode.Count; i++)
+        {
+            if (game.worldType == 1)
+            {
+                warnode[i].SetActive(true);
+            }
+            else
+            {
+                warnode[i].SetActive(false);
+            }
+        }
+
         sr[0].enabled = true;
         sr[1].enabled = true;
         if (game.worldType == 0)
