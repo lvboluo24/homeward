@@ -27,11 +27,12 @@ public int index;
     private void Awake()
     {
         game = FindObjectOfType<Game>();
+        particleSystem1.Stop();
     }
 
     void Start()
     {
-        particleSystem1.Stop();
+        
     }
 
     // Update is called once per frame

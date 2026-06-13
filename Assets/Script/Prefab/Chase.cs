@@ -25,6 +25,7 @@ public class Chase : MonoBehaviour
         player = GameObject.Find("Player").GetComponent<Player>();
         rb = GetComponent<Rigidbody2D>();
         currentPosition = transform.position;
+        animator.Play("MonIdle");
     }
     void Start()
     {
@@ -38,7 +39,7 @@ public class Chase : MonoBehaviour
         if (isExp == 0&&scope._isPlayer)
         {
             express.ExpAngry();
-            animator.Play("MonIdle");
+            
             animator.speed = 1;
             isExp = 1;
             
