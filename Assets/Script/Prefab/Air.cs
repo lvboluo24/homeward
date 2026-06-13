@@ -16,7 +16,11 @@ public class Air : MonoBehaviour
     public int number;
     [Tooltip("类型,0,按钮激活，1，和平激活，2，战争激活")]
     public int type;
-    public Particle particle;
+    //粒子系统
+    public ParticleSystem particleSystem1;
+public int index;
+
+
     public bool _a;
     Game game;
 
@@ -27,7 +31,7 @@ public class Air : MonoBehaviour
 
     void Start()
     {
-        
+        particleSystem1.Stop();
     }
 
     // Update is called once per frame
@@ -66,17 +70,18 @@ public class Air : MonoBehaviour
                 _isAir = true;
             }
         }
-        if (_isAir)
+        if (_isAir&&index==0)
         {
             //显示粒子
-            particle.gameObject.SetActive(true);
-            particle.play = true;
+            particleSystem1.Play();
+            index = 1;
         }
-        else
+        else if (!_isAir&&index==1)
         {
-            particle.play = false;
             //隐藏粒子
-            particle.gameObject.SetActive(false);
+            particleSystem1.Stop();
+            particleSystem1.Clear();
+            index = 0;
         }
         
 
